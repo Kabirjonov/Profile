@@ -1,0 +1,47 @@
+{
+  "seo": {
+    "title": "Alex Resume | Dasturchi portfolio",
+    "description": "Alexning rasmiy resume sayti: tajriba, loyihalar, ko'nikmalar va aloqa ma'lumotlari."
+  },
+  "nav": {
+    "home": "Bosh sahifa",
+    "about": "Men haqimda",
+    "project": "Loyihalar",
+    "skills": "Ko'nikmalar",
+    "contact": "Aloqa"
+  },
+  "hero": {
+    "badge": "Portfolio",
+    "title": "Salom, men Alex",
+    "description": "Frontend va full-stack yo'nalishida ishlovchi dasturchiman. Bu sahifada tajribam, loyihalarim va bog'lanish ma'lumotlari joylashadi.",
+    "availability": "Yangi loyihalar uchun ochiqman",
+    "primaryCta": "Loyihalarni Ko'rish",
+    "secondaryCta": "Bog'lanish",
+    "stackLabel": "Texnologiyalar",
+    "shortAbout": [
+      "Baxtli yigit",
+      "Frontend dasturchi",
+      "Backend dasturchi",
+      "Aka-uka",
+      "O'g'il"
+    ]
+  },
+  "sections": {
+    "about": {
+      "title": "Men haqimda",
+      "description": "Men zamonaviy va tezkor web mahsulotlar yaratishga ixtisoslashganman."
+    },
+    "project": {
+      "title": "Loyihalar",
+      "description": "Bu bo'limda tanlangan amaliy loyihalarimni joylayman."
+    },
+    "skills": {
+      "title": "Ko'nikmalar",
+      "description": "React, Next.js, TypeScript, Tailwind, Node.js va API integratsiyalar."
+    },
+    "contact": {
+      "title": "Aloqa",
+      "description": "Hamkorlik uchun email yoki ijtimoiy tarmoqlar orqali bog'laning."
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "seo": {
+    "title": "Alex Resume | Developer Portfolio",
+    "description": "Official resume website for Alex: experience, projects, skills, and contact information."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "project": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Portfolio",
+    "title": "Hi, I'm Alex",
+    "description": "I build frontend and full-stack products. This website contains my experience, selected projects, and contact details.",
+    "availability": "Open for new projects",
+    "primaryCta": "View Projects",
+    "secondaryCta": "Contact Me",
+    "stackLabel": "Tech Stack",
+    "shortAbout": [
+      "Lucky guy",
+      "Frontend Developer",
+      "Backend Developer",
+      "Brother",
+      "Son"
+    ]
+  },
+  "sections": {
+    "about": {
+      "title": "About",
+      "description": "I focus on building modern and high-performance web products."
+    },
+    "project": {
+      "title": "Projects",
+      "description": "This section will include selected real-world projects."
+    },
+    "skills": {
+      "title": "Skills",
+      "description": "React, Next.js, TypeScript, Tailwind, Node.js, and API integrations."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Feel free to reach out via email or social platforms."
+    }
+  }
+}
