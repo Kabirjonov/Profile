@@ -5,7 +5,6 @@ import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import BackgroundParticles from "../shared/BackgroundParticles";
 function LoadingDots() {
 	return (
 		<span className='ml-1 inline-flex'>
@@ -108,7 +107,7 @@ export function HeroSection() {
 					<div className='rounded-full border border-border/80 bg-card/85 p-2.5 shadow-sm backdrop-blur-sm sm:rounded-[2rem] sm:p-3'>
 						<div className='overflow-hidden rounded-full border border-border/70 bg-muted/40 sm:rounded-[1.4rem]'>
 							<Image
-								className='h-auto w-full object-cover rounded-full'
+								className='h-auto w-full object-cover rounded-full px-2'
 								src='/john.png'
 								alt='Personal picture'
 								width={420}

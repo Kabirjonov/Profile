@@ -29,7 +29,59 @@
   "sections": {
     "about": {
       "title": "About",
-      "description": "I focus on building modern and high-performance web products."
+      "description": "I focus on building modern and high-performance web products.",
+      "intro": "Here you will find more information about me, what I do, and my current skills mostly in terms of programming and technology.",
+      "getToKnowTitle": "Get To Know Me!",
+      "p1": "I am a frontend focused web developer building and managing user interfaces for web products that solve real problems.",
+      "p2": "I enjoy sharing what I learn about web development and helping the developer community grow together.",
+      "p3": "I am open to job opportunities where I can contribute, learn, and create value. If you have a good opportunity, feel free to contact me.",
+      "skillsTitle": "My Skills",
+      "skillCategories": [
+        {
+          "title": "Frontend",
+          "items": [
+            "HTML",
+            "CSS",
+            "Sass",
+            "Responsive Design",
+            "JavaScript",
+            "React"
+          ]
+        },
+        {
+          "title": "Backend",
+          "items": [
+            "Node.js"
+          ]
+        },
+        {
+          "title": "Database",
+          "items": [
+            "MongoDB"
+          ]
+        },
+        {
+          "title": "Tools",
+          "items": [
+            "Git",
+            "Bootstrap"
+          ]
+        },
+        {
+          "title": "Other",
+          "items": [
+            "Problem Solving"
+          ]
+        },
+        {
+          "title": "Languages",
+          "items": [
+            "English B2",
+            "Russian B2",
+            "Uzbek C2"
+          ]
+        }
+      ]
     },
     "project": {
       "title": "Projects",
@@ -43,5 +95,11 @@
       "title": "Contact",
       "description": "Feel free to reach out via email or social platforms."
     }
+  },
+  "footer": {
+    "tagline": "Building clean and performant web products with modern frontend and full-stack tools.",
+    "quickLinks": "Quick Links",
+    "social": "Social",
+    "rights": "© {{year}} Kabirjonov. All rights reserved."
   }
 }

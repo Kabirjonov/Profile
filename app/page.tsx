@@ -2,7 +2,6 @@ import { AboutSection } from "@/components/sections/about-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { ProjectSection } from "@/components/sections/project-section";
-import { SkillsSection } from "@/components/sections/skills-section";
 import BackgroundParticles from "@/components/shared/BackgroundParticles";
 import RightLinks from "@/components/shared/RightLinks";
 
@@ -15,7 +14,7 @@ export default async function HomePage() {
 				<HeroSection />
 				<AboutSection />
 				<ProjectSection />
-				<SkillsSection />
+				{/* <SkillsSection /> */}
 				<ContactSection />
 			</div>
 		</main>

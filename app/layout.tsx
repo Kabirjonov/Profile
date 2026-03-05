@@ -8,6 +8,7 @@ import { siteConfig } from "@/lib/site";
 import { AppProviders } from "@/providers";
 
 import "./globals.css";
+import { Footer } from "@/components/shared/footer";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -44,6 +45,7 @@ export default async function RootLayout({
 				<AppProviders locale={locale} messages={dictionary}>
 					<Navbar />
 					{children}
+					<Footer />
 				</AppProviders>
 			</body>
 		</html>

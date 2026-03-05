@@ -29,7 +29,59 @@
   "sections": {
     "about": {
       "title": "Men haqimda",
-      "description": "Men zamonaviy va tezkor web mahsulotlar yaratishga ixtisoslashganman."
+      "description": "Men zamonaviy va tezkor web mahsulotlar yaratishga ixtisoslashganman.",
+      "intro": "Bu yerda men haqimda, nimalar qilayotganim va hozirgi texnik ko'nikmalarim haqida ko'proq ma'lumot topasiz.",
+      "getToKnowTitle": "Meni Yaqindan Taniying!",
+      "p1": "Men frontend yo'nalishida ishlovchi dasturchiman va real muammolarni yechadigan web mahsulotlar uchun interfeyslar yarataman.",
+      "p2": "Web dasturlash bo'yicha o'rganganlarimni ulashishni va developer hamjamiyati bilan birga o'sishni yoqtiraman.",
+      "p3": "Men o'rganish, hissa qo'shish va qiymat yaratish mumkin bo'lgan ish imkoniyatlariga ochiqman. Mos imkoniyat bo'lsa, men bilan bog'laning.",
+      "skillsTitle": "Ko'nikmalarim",
+      "skillCategories": [
+        {
+          "title": "Frontend",
+          "items": [
+            "HTML",
+            "CSS",
+            "Sass",
+            "Responsive Dizayn",
+            "JavaScript",
+            "React"
+          ]
+        },
+        {
+          "title": "Backend",
+          "items": [
+            "Node.js"
+          ]
+        },
+        {
+          "title": "Database",
+          "items": [
+            "MongoDB"
+          ]
+        },
+        {
+          "title": "Tools",
+          "items": [
+            "Git",
+            "Bootstrap"
+          ]
+        },
+        {
+          "title": "Other",
+          "items": [
+            "Muammo yechish"
+          ]
+        },
+        {
+          "title": "Languages",
+          "items": [
+            "Ingliz tili B2",
+            "Rus tili B2",
+            "O'zbek tili C2"
+          ]
+        }
+      ]
     },
     "project": {
       "title": "Loyihalar",
@@ -43,5 +95,11 @@
       "title": "Aloqa",
       "description": "Hamkorlik uchun email yoki ijtimoiy tarmoqlar orqali bog'laning."
     }
+  },
+  "footer": {
+    "tagline": "Zamonaviy frontend va full-stack texnologiyalar bilan toza va tezkor web mahsulotlar yarataman.",
+    "quickLinks": "Tezkor Havolalar",
+    "social": "Ijtimoiy Tarmoqlar",
+    "rights": "© {{year}} Kabirjonov. Barcha huquqlar himoyalangan."
   }
 }
