@@ -1,105 +1,176 @@
 {
-  "seo": {
-    "title": "Alex Resume | Developer Portfolio",
-    "description": "Official resume website for Alex: experience, projects, skills, and contact information."
-  },
-  "nav": {
-    "home": "Home",
-    "about": "About",
-    "project": "Projects",
-    "skills": "Skills",
-    "contact": "Contact"
-  },
-  "hero": {
-    "badge": "Portfolio",
-    "title": "Hi, I'm Alex",
-    "description": "I build frontend and full-stack products. This website contains my experience, selected projects, and contact details.",
-    "availability": "Open for new projects",
-    "primaryCta": "View Projects",
-    "secondaryCta": "Contact Me",
-    "stackLabel": "Tech Stack",
-    "shortAbout": [
-      "Lucky guy",
-      "Frontend Developer",
-      "Backend Developer",
-      "Brother",
-      "Son"
-    ]
-  },
-  "sections": {
-    "about": {
-      "title": "About",
-      "description": "I focus on building modern and high-performance web products.",
-      "intro": "Here you will find more information about me, what I do, and my current skills mostly in terms of programming and technology.",
-      "getToKnowTitle": "Get To Know Me!",
-      "p1": "I am a frontend focused web developer building and managing user interfaces for web products that solve real problems.",
-      "p2": "I enjoy sharing what I learn about web development and helping the developer community grow together.",
-      "p3": "I am open to job opportunities where I can contribute, learn, and create value. If you have a good opportunity, feel free to contact me.",
-      "skillsTitle": "My Skills",
-      "skillCategories": [
-        {
-          "title": "Frontend",
-          "items": [
-            "HTML",
-            "CSS",
-            "Sass",
-            "Responsive Design",
-            "JavaScript",
-            "React"
-          ]
-        },
-        {
-          "title": "Backend",
-          "items": [
-            "Node.js"
-          ]
-        },
-        {
-          "title": "Database",
-          "items": [
-            "MongoDB"
-          ]
-        },
-        {
-          "title": "Tools",
-          "items": [
-            "Git",
-            "Bootstrap"
-          ]
-        },
-        {
-          "title": "Other",
-          "items": [
-            "Problem Solving"
-          ]
-        },
-        {
-          "title": "Languages",
-          "items": [
-            "English B2",
-            "Russian B2",
-            "Uzbek C2"
-          ]
-        }
-      ]
-    },
-    "project": {
-      "title": "Projects",
-      "description": "This section will include selected real-world projects."
-    },
-    "skills": {
-      "title": "Skills",
-      "description": "React, Next.js, TypeScript, Tailwind, Node.js, and API integrations."
-    },
-    "contact": {
-      "title": "Contact",
-      "description": "Feel free to reach out via email or social platforms."
-    }
-  },
-  "footer": {
-    "tagline": "Building clean and performant web products with modern frontend and full-stack tools.",
-    "quickLinks": "Quick Links",
-    "social": "Social",
-    "rights": "© {{year}} Kabirjonov. All rights reserved."
-  }
+	"seo": {
+		"title": "Alex Resume | Developer Portfolio",
+		"description": "Official resume website for Alex: experience, projects, skills, and contact information."
+	},
+	"nav": {
+		"home": "Home",
+		"about": "About",
+		"project": "Projects",
+		"skills": "Skills",
+		"contact": "Contact"
+	},
+	"hero": {
+		"badge": "Portfolio",
+		"title": "Hi, I'm Alex",
+		"description": "I build frontend and full-stack products. This website contains my experience, selected projects, and contact details.",
+		"availability": "Open for new projects",
+		"primaryCta": "View Projects",
+		"secondaryCta": "Contact Me",
+		"stackLabel": "Tech Stack",
+		"shortAbout": [
+			"Lucky guy",
+			"Frontend Developer",
+			"Backend Developer",
+			"Brother",
+			"Son"
+		]
+	},
+	"sections": {
+		"about": {
+			"title": "About",
+			"description": "I focus on building modern and high-performance web products.",
+			"intro": "Here you will find more information about me, what I do, and my current skills mostly in terms of programming and technology.",
+			"getToKnowTitle": "Get To Know Me!",
+			"p1": "I am a frontend focused web developer building and managing user interfaces for web products that solve real problems.",
+			"p2": "I enjoy sharing what I learn about web development and helping the developer community grow together.",
+			"p3": "I am open to job opportunities where I can contribute, learn, and create value. If you have a good opportunity, feel free to contact me.",
+			"skillsTitle": "My Skills",
+			"skillCategories": [
+				{
+					"title": "Frontend",
+					"items": [
+						"HTML",
+						"CSS",
+						"Sass",
+						"Responsive Design",
+						"JavaScript",
+						"React"
+					]
+				},
+				{
+					"title": "Backend",
+					"items": ["Node.js"]
+				},
+				{
+					"title": "Database",
+					"items": ["MongoDB"]
+				},
+				{
+					"title": "Tools",
+					"items": ["Git", "Bootstrap"]
+				},
+				{
+					"title": "Other",
+					"items": ["Problem Solving"]
+				},
+				{
+					"title": "Languages",
+					"items": ["English B2", "Russian B2", "Uzbek C2"]
+				}
+			]
+		},
+		"project": {
+			"title": "Projects",
+			"description": "Selected products I built with focus on performance, clean architecture, and strong UX.",
+			"viewLive": "Live",
+			"viewCode": "Code",
+			"items": [
+				{
+					"title": "DevLink Platform",
+					"description": "A full-stack developer portfolio platform with auth, dashboard, and multilingual public pages.",
+					"stack": ["Next.js", "TypeScript", "PostgreSQL", "Tailwind"],
+					"status": "production",
+					"liveUrl": "https://example.com",
+					"codeUrl": "https://github.com/yourusername/devlink"
+				},
+				{
+					"title": "TaskFlow CRM",
+					"description": "Internal CRM for sales teams with role permissions, analytics widgets, and contact management.",
+					"stack": ["React", "Node.js", "Express", "MongoDB"],
+					"status": "private",
+					"liveUrl": "https://example.com",
+					"codeUrl": "https://github.com/yourusername/taskflow-crm"
+				},
+				{
+					"title": "E-Commerce UI Kit",
+					"description": "Reusable storefront components, checkout flows, and design tokens for rapid e-commerce delivery.",
+					"stack": ["Next.js", "React Query", "Zustand", "Stripe"],
+					"status": "active",
+					"liveUrl": "https://example.com",
+					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit"
+				},
+				{
+					"title": "E-Commerce UI Kit",
+					"description": "Reusable storefront components, checkout flows, and design tokens for rapid e-commerce delivery.",
+					"stack": ["Next.js", "React Query", "Zustand", "Stripe"],
+					"status": "active",
+					"liveUrl": "https://example.com",
+					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit"
+				},
+				{
+					"title": "TaskFlow CRM",
+					"description": "Internal CRM for sales teams with role permissions, analytics widgets, and contact management.",
+					"stack": ["React", "Node.js", "Express", "MongoDB"],
+					"status": "private",
+					"liveUrl": "https://example.com",
+					"codeUrl": "https://github.com/yourusername/taskflow-crm"
+				},
+				{
+					"title": "E-Commerce UI Kit",
+					"description": "Reusable storefront components, checkout flows, and design tokens for rapid e-commerce delivery.",
+					"stack": ["Next.js", "React Query", "Zustand", "Stripe"],
+					"status": "active",
+					"liveUrl": "https://example.com",
+					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit"
+				},
+				{
+					"title": "E-Commerce UI Kit",
+					"description": "Reusable storefront components, checkout flows, and design tokens for rapid e-commerce delivery.",
+					"stack": ["Next.js", "React Query", "Zustand", "Stripe"],
+					"status": "active",
+					"liveUrl": "https://example.com",
+					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit"
+				}
+			]
+		},
+		"skills": {
+			"title": "Skills",
+			"description": "React, Next.js, TypeScript, Tailwind, Node.js, and API integrations."
+		},
+		"contact": {
+			"title": "Contact",
+			"description": "Feel free to reach out via email or social platforms.",
+			"form": {
+				"fullName": "Full name",
+				"fullNamePlaceholder": "Enter your full name",
+				"phone": "Phone number",
+				"phonePlaceholder": "Enter your phone number",
+				"description": "Description",
+				"descriptionPlaceholder": "Describe your request or project details",
+				"file": "Attachment (optional)",
+				"fileHint": "Optional. Max file size: 5MB.",
+				"submit": "Send message",
+				"submitting": "Sending...",
+				"success": "Your message has been sent successfully.",
+				"validation": {
+					"fullNameRequired": "Full name is required",
+					"fullNameMin": "Full name should be at least 2 characters",
+					"phoneRequired": "Phone number is required",
+					"phoneMin": "Phone number should be at least 7 characters",
+					"descriptionRequired": "Description is required",
+					"descriptionMin": "Description should be at least 10 characters",
+					"phoneInvalid": "Enter a valid phone number",
+					"fileMaxSize": "File size must be less than 5MB"
+				},
+				"error": "Something went wrong. Please try again."
+			}
+		}
+	},
+	"footer": {
+		"tagline": "Building clean and performant web products with modern frontend and full-stack tools.",
+		"quickLinks": "Quick Links",
+		"social": "Social",
+		"rights": "© {{year}} Kabirjonov. All rights reserved."
+	}
 }

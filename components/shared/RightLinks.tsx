@@ -9,15 +9,23 @@ import {
 import Link from "next/link";
 
 export const SocialLinks = [
-	{ name: "Github", link: "https://github.com/yourusername", icon: Github },
-	{ name: "LinkedIn", link: "https://github.com/yourusername", icon: Linkedin },
+	{ name: "Github", link: "https://github.com/Kabirjonov", icon: Github },
+	{
+		name: "LinkedIn",
+		link: "https://www.linkedin.com/in/oxunjon-kabirjanov-022b5325b/",
+		icon: Linkedin,
+	},
 	{ name: "Mail", link: "https://github.com/yourusername", icon: Mail },
 	{
 		name: "Instagram",
-		link: "https://github.com/yourusername",
+		link: "https://www.instagram.com/kab1rjonov_o/",
 		icon: Instagram,
 	},
-	{ name: "Telegram", link: "https://github.com/yourusername", icon: Send },
+	{
+		name: "Telegram",
+		link: "https://t.me/kabirjonov_o",
+		icon: Send,
+	},
 	{
 		name: "Download CV",
 		link: "https://github.com/yourusername",
@@ -31,6 +39,7 @@ export default function RightLinks() {
 				<Link
 					href={item.link}
 					key={item.name}
+					target='_blank'
 					className='relative p-2 group rounded-full border border-border  transition hover:bg-primary'
 				>
 					<item.icon

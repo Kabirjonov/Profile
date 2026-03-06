@@ -3,6 +3,7 @@ import { ContactSection } from "@/components/sections/contact-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { ProjectSection } from "@/components/sections/project-section";
 import BackgroundParticles from "@/components/shared/BackgroundParticles";
+import { Footer } from "@/components/shared/footer";
 import RightLinks from "@/components/shared/RightLinks";
 
 export default async function HomePage() {
@@ -16,6 +17,7 @@ export default async function HomePage() {
 				<ProjectSection />
 				{/* <SkillsSection /> */}
 				<ContactSection />
+				<Footer />
 			</div>
 		</main>
 	);

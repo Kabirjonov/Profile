@@ -1,105 +1,176 @@
 {
-  "seo": {
-    "title": "Alex Resume | Dasturchi portfolio",
-    "description": "Alexning rasmiy resume sayti: tajriba, loyihalar, ko'nikmalar va aloqa ma'lumotlari."
-  },
-  "nav": {
-    "home": "Bosh sahifa",
-    "about": "Men haqimda",
-    "project": "Loyihalar",
-    "skills": "Ko'nikmalar",
-    "contact": "Aloqa"
-  },
-  "hero": {
-    "badge": "Portfolio",
-    "title": "Salom, men Alex",
-    "description": "Frontend va full-stack yo'nalishida ishlovchi dasturchiman. Bu sahifada tajribam, loyihalarim va bog'lanish ma'lumotlari joylashadi.",
-    "availability": "Yangi loyihalar uchun ochiqman",
-    "primaryCta": "Loyihalarni Ko'rish",
-    "secondaryCta": "Bog'lanish",
-    "stackLabel": "Texnologiyalar",
-    "shortAbout": [
-      "Baxtli yigit",
-      "Frontend dasturchi",
-      "Backend dasturchi",
-      "Aka-uka",
-      "O'g'il"
-    ]
-  },
-  "sections": {
-    "about": {
-      "title": "Men haqimda",
-      "description": "Men zamonaviy va tezkor web mahsulotlar yaratishga ixtisoslashganman.",
-      "intro": "Bu yerda men haqimda, nimalar qilayotganim va hozirgi texnik ko'nikmalarim haqida ko'proq ma'lumot topasiz.",
-      "getToKnowTitle": "Meni Yaqindan Taniying!",
-      "p1": "Men frontend yo'nalishida ishlovchi dasturchiman va real muammolarni yechadigan web mahsulotlar uchun interfeyslar yarataman.",
-      "p2": "Web dasturlash bo'yicha o'rganganlarimni ulashishni va developer hamjamiyati bilan birga o'sishni yoqtiraman.",
-      "p3": "Men o'rganish, hissa qo'shish va qiymat yaratish mumkin bo'lgan ish imkoniyatlariga ochiqman. Mos imkoniyat bo'lsa, men bilan bog'laning.",
-      "skillsTitle": "Ko'nikmalarim",
-      "skillCategories": [
-        {
-          "title": "Frontend",
-          "items": [
-            "HTML",
-            "CSS",
-            "Sass",
-            "Responsive Dizayn",
-            "JavaScript",
-            "React"
-          ]
-        },
-        {
-          "title": "Backend",
-          "items": [
-            "Node.js"
-          ]
-        },
-        {
-          "title": "Database",
-          "items": [
-            "MongoDB"
-          ]
-        },
-        {
-          "title": "Tools",
-          "items": [
-            "Git",
-            "Bootstrap"
-          ]
-        },
-        {
-          "title": "Other",
-          "items": [
-            "Muammo yechish"
-          ]
-        },
-        {
-          "title": "Languages",
-          "items": [
-            "Ingliz tili B2",
-            "Rus tili B2",
-            "O'zbek tili C2"
-          ]
-        }
-      ]
-    },
-    "project": {
-      "title": "Loyihalar",
-      "description": "Bu bo'limda tanlangan amaliy loyihalarimni joylayman."
-    },
-    "skills": {
-      "title": "Ko'nikmalar",
-      "description": "React, Next.js, TypeScript, Tailwind, Node.js va API integratsiyalar."
-    },
-    "contact": {
-      "title": "Aloqa",
-      "description": "Hamkorlik uchun email yoki ijtimoiy tarmoqlar orqali bog'laning."
-    }
-  },
-  "footer": {
-    "tagline": "Zamonaviy frontend va full-stack texnologiyalar bilan toza va tezkor web mahsulotlar yarataman.",
-    "quickLinks": "Tezkor Havolalar",
-    "social": "Ijtimoiy Tarmoqlar",
-    "rights": "© {{year}} Kabirjonov. Barcha huquqlar himoyalangan."
-  }
+	"seo": {
+		"title": "Alex Resume | Dasturchi portfolio",
+		"description": "Alexning rasmiy resume sayti: tajriba, loyihalar, ko'nikmalar va aloqa ma'lumotlari."
+	},
+	"nav": {
+		"home": "Bosh sahifa",
+		"about": "Men haqimda",
+		"project": "Loyihalar",
+		"skills": "Ko'nikmalar",
+		"contact": "Aloqa"
+	},
+	"hero": {
+		"badge": "Portfolio",
+		"title": "Salom, men Alex",
+		"description": "Frontend va full-stack yo'nalishida ishlovchi dasturchiman. Bu sahifada tajribam, loyihalarim va bog'lanish ma'lumotlari joylashadi.",
+		"availability": "Yangi loyihalar uchun ochiqman",
+		"primaryCta": "Loyihalarni Ko'rish",
+		"secondaryCta": "Bog'lanish",
+		"stackLabel": "Texnologiyalar",
+		"shortAbout": [
+			"Omadli yigit",
+			"Frontend dasturchi",
+			"Backend dasturchi",
+			"Aka-uka",
+			"O'g'il"
+		]
+	},
+	"sections": {
+		"about": {
+			"title": "Men haqimda",
+			"description": "Men zamonaviy va tezkor web mahsulotlar yaratishga ixtisoslashganman.",
+			"intro": "Bu yerda men haqimda, nimalar qilayotganim va hozirgi texnik ko'nikmalarim haqida ko'proq ma'lumot topasiz.",
+			"getToKnowTitle": "Meni Yaqindan Taniying!",
+			"p1": "Men frontend yo'nalishida ishlovchi dasturchiman va real muammolarni yechadigan web mahsulotlar uchun interfeyslar yarataman.",
+			"p2": "Web dasturlash bo'yicha o'rganganlarimni ulashishni va developer hamjamiyati bilan birga o'sishni yoqtiraman.",
+			"p3": "Men o'rganish, hissa qo'shish va qiymat yaratish mumkin bo'lgan ish imkoniyatlariga ochiqman. Mos imkoniyat bo'lsa, men bilan bog'laning.",
+			"skillsTitle": "Ko'nikmalarim",
+			"skillCategories": [
+				{
+					"title": "Frontend",
+					"items": [
+						"HTML",
+						"CSS",
+						"Sass",
+						"Responsive Dizayn",
+						"JavaScript",
+						"React"
+					]
+				},
+				{
+					"title": "Backend",
+					"items": ["Node.js"]
+				},
+				{
+					"title": "Database",
+					"items": ["MongoDB"]
+				},
+				{
+					"title": "Tools",
+					"items": ["Git", "Bootstrap"]
+				},
+				{
+					"title": "Other",
+					"items": ["Muammo yechish"]
+				},
+				{
+					"title": "Languages",
+					"items": ["Ingliz tili B2", "Rus tili B2", "O'zbek tili C2"]
+				}
+			]
+		},
+		"project": {
+			"title": "Loyihalar",
+			"description": "Quyida men ishlagan, tezlik, toza arxitektura va foydalanuvchi tajribasiga urg'u berilgan loyihalar keltirilgan.",
+			"viewLive": "Live",
+			"viewCode": "Kod",
+			"items": [
+				{
+					"title": "DevLink Platform",
+					"description": "Avtorizatsiya, dashboard va ko'p tilli ommaviy sahifalarga ega full-stack portfolio platforma.",
+					"stack": ["Next.js", "TypeScript", "PostgreSQL", "Tailwind"],
+					"status": "production",
+					"liveUrl": "https://example.com",
+					"codeUrl": "https://github.com/yourusername/devlink"
+				},
+				{
+					"title": "TaskFlow CRM",
+					"description": "Sotuv jamoasi uchun role-permission, analytics vidjetlar va kontakt boshqaruviga ega ichki CRM.",
+					"stack": ["React", "Node.js", "Express", "MongoDB"],
+					"status": "private",
+					"liveUrl": "https://example.com",
+					"codeUrl": "https://github.com/yourusername/taskflow-crm"
+				},
+				{
+					"title": "E-Commerce UI Kit",
+					"description": "E-commerce uchun qayta ishlatiladigan komponentlar, checkout oqimlari va dizayn tokenlari to'plami.",
+					"stack": ["Next.js", "React Query", "Zustand", "Stripe"],
+					"status": "active",
+					"liveUrl": "https://example.com",
+					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit"
+				},
+				{
+					"title": "E-Commerce UI Kit",
+					"description": "E-commerce uchun qayta ishlatiladigan komponentlar, checkout oqimlari va dizayn tokenlari to'plami.",
+					"stack": ["Next.js", "React Query", "Zustand", "Stripe"],
+					"status": "active",
+					"liveUrl": "https://example.com",
+					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit"
+				},
+				{
+					"title": "TaskFlow CRM",
+					"description": "Sotuv jamoasi uchun role-permission, analytics vidjetlar va kontakt boshqaruviga ega ichki CRM.",
+					"stack": ["React", "Node.js", "Express", "MongoDB"],
+					"status": "private",
+					"liveUrl": "https://example.com",
+					"codeUrl": "https://github.com/yourusername/taskflow-crm"
+				},
+				{
+					"title": "E-Commerce UI Kit",
+					"description": "E-commerce uchun qayta ishlatiladigan komponentlar, checkout oqimlari va dizayn tokenlari to'plami.",
+					"stack": ["Next.js", "React Query", "Zustand", "Stripe"],
+					"status": "active",
+					"liveUrl": "https://example.com",
+					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit"
+				},
+				{
+					"title": "E-Commerce UI Kit",
+					"description": "E-commerce uchun qayta ishlatiladigan komponentlar, checkout oqimlari va dizayn tokenlari to'plami.",
+					"stack": ["Next.js", "React Query", "Zustand", "Stripe"],
+					"status": "active",
+					"liveUrl": "https://example.com",
+					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit"
+				}
+			]
+		},
+		"skills": {
+			"title": "Ko'nikmalar",
+			"description": "React, Next.js, TypeScript, Tailwind, Node.js va API integratsiyalar."
+		},
+		"contact": {
+			"title": "Aloqa",
+			"description": "Hamkorlik uchun email yoki ijtimoiy tarmoqlar orqali bog'laning.",
+			"form": {
+				"fullName": "To'liq ismingiz",
+				"fullNamePlaceholder": "To'liq ismingizni kiriting",
+				"phone": "Telefon raqamingiz",
+				"phonePlaceholder": "Telefon raqamingizni kiriting",
+				"description": "Tavsif",
+				"descriptionPlaceholder": "So'rovingiz yoki loyiha tafsilotlarini yozing",
+				"file": "Fayl (ixtiyoriy)",
+				"fileHint": "Ixtiyoriy. Maksimal fayl hajmi: 5MB.",
+				"submit": "Xabar yuborish",
+				"submitting": "Yuborilmoqda...",
+				"success": "Xabaringiz muvaffaqiyatli yuborildi.",
+				"validation": {
+					"fullNameRequired": "To'liq ism majburiy",
+					"fullNameMin": "To'liq ism kamida 2 ta belgidan iborat bo'lishi kerak",
+					"phoneRequired": "Telefon raqami majburiy",
+					"phoneMin": "Telefon raqami kamida 7 ta belgidan iborat bo'lishi kerak",
+					"descriptionRequired": "Tavsif majburiy",
+					"descriptionMin": "Tavsif kamida 10 ta belgidan iborat bo'lishi kerak",
+					"phoneInvalid": "To'g'ri telefon raqami kiriting",
+					"fileMaxSize": "Fayl hajmi 5MB dan kichik bo'lishi kerak"
+				},
+				"error": "Xatolik yuz berdi. Qayta urinib ko'ring."
+			}
+		}
+	},
+	"footer": {
+		"tagline": "Zamonaviy frontend va full-stack texnologiyalar bilan toza va tezkor web mahsulotlar yarataman.",
+		"quickLinks": "Tezkor Havolalar",
+		"social": "Ijtimoiy Tarmoqlar",
+		"rights": "© {{year}} Kabirjonov. Barcha huquqlar himoyalangan."
+	}
 }

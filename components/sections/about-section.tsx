@@ -34,33 +34,33 @@ export function AboutSection() {
 	return (
 		<section
 			id='about'
-			className='mx-auto w-full max-w-6xl px-6 py-16 sm:px-10'
+			className='mx-auto w-full max-w-6xl px-4 py-16 sm:px-10'
 		>
-			<div className='rounded-3xl border border-border/70 bg-card/65 p-6 shadow-lg sm:p-8 lg:p-10'>
+			<div className='rounded-3xl border border-border/70 bg-card/65 p-4 shadow-lg sm:p-8 lg:p-10'>
 				<div className='mx-auto max-w-3xl text-center'>
 					<h2 className='text-3xl font-bold tracking-tight text-foreground sm:text-4xl'>
 						{t("sections.about.title")}
 					</h2>
 					<div className='mx-auto mt-4 h-1 w-16 rounded-full bg-primary/80' />
-					<p className='mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base'>
+					<p className='mx-auto mt-5 max-w-2xl break-words text-sm leading-relaxed text-muted-foreground sm:text-base'>
 						{t("sections.about.intro")}
 					</p>
 				</div>
 
 				<div className='mt-12 grid gap-8 lg:grid-cols-2 lg:gap-10'>
-					<div className='rounded-2xl border border-border/70 bg-background/45 p-5 sm:p-6'>
+					<div className='min-w-0 rounded-2xl border border-border/70 bg-background/45 p-5 sm:p-6'>
 						<h3 className='text-2xl font-semibold tracking-tight text-foreground'>
 							{t("sections.about.getToKnowTitle")}
 						</h3>
-						<div className='mt-5 space-y-4 text-base leading-relaxed text-muted-foreground'>
+						<div className='mt-5 space-y-4 break-words text-base leading-relaxed text-muted-foreground'>
 							<p>{t("sections.about.p1")}</p>
 							<p>{t("sections.about.p2")}</p>
 							<p>{t("sections.about.p3")}</p>
 						</div>
 					</div>
 
-					<div className='rounded-2xl border border-border/70 p-5 sm:p-6'>
-						<div className='flex items-center justify-between gap-3'>
+					<div className='min-w-0 rounded-2xl border border-border/70 p-5 sm:p-6'>
+						<div className='flex flex-wrap items-center justify-between gap-3'>
 							<h3 className='text-2xl font-semibold tracking-tight text-foreground'>
 								{t("sections.about.skillsTitle")}
 							</h3>
@@ -84,12 +84,12 @@ export function AboutSection() {
 							</div>
 						</div>
 
-						<div className='mt-5 overflow-hidden' ref={emblaRef}>
-							<div className='flex'>
+						<div className='mt-5 min-w-0 overflow-hidden' ref={emblaRef}>
+							<div className='flex min-w-0'>
 								{skillCategories.map(category => (
 									<div
 										key={category.title}
-										className='min-w-0 flex-[0_0_100%] pr-3 sm:flex-[0_0_50%]'
+										className='min-w-0 flex-[0_0_100%] pr-0 sm:flex-[0_0_50%] sm:pr-3'
 									>
 										<div className='h-full rounded-xl border border-border/70 bg-background/45 p-4'>
 											<h4 className='text-sm font-semibold tracking-wide text-primary uppercase'>

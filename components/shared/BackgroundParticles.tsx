@@ -22,7 +22,7 @@ export default function BackgroundParticles() {
 			},
 			particles: {
 				number: {
-					value: 45,
+					value: 85,
 					density: { enable: true, area: 900 },
 				},
 				color: { value: "#ffffff" },
@@ -55,7 +55,7 @@ export default function BackgroundParticles() {
 			},
 			detectRetina: true,
 		}),
-		[]
+		[],
 	);
 
 	if (!ready) return null;

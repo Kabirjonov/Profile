@@ -1,105 +1,176 @@
 {
-  "seo": {
-    "title": "Alex Resume | Портфолио разработчика",
-    "description": "Официальный сайт-резюме Alex: опыт, проекты, навыки и контактная информация."
-  },
-  "nav": {
-    "home": "Главная",
-    "about": "Обо мне",
-    "project": "Проекты",
-    "skills": "Навыки",
-    "contact": "Контакты"
-  },
-  "hero": {
-    "badge": "Портфолио",
-    "title": "Привет, я Alex",
-    "description": "Я занимаюсь frontend и full-stack разработкой. На сайте собраны мой опыт, проекты и контакты.",
-    "availability": "Открыт к новым проектам",
-    "primaryCta": "Смотреть проекты",
-    "secondaryCta": "Связаться",
-    "stackLabel": "Технологии",
-    "shortAbout": [
-      "Счастливый парень",
-      "Frontend разработчик",
-      "Backend разработчик",
-      "Брат",
-      "Сын"
-    ]
-  },
-  "sections": {
-    "about": {
-      "title": "Обо мне",
-      "description": "Я специализируюсь на создании современных и быстрых веб-продуктов.",
-      "intro": "Здесь вы найдете больше информации обо мне, о том, чем я занимаюсь, и о моих текущих навыках в программировании и технологиях.",
-      "getToKnowTitle": "Узнайте Меня Лучше!",
-      "p1": "Я frontend-разработчик, который создает и развивает интерфейсы для веб-продуктов, решающих реальные задачи.",
-      "p2": "Мне нравится делиться тем, что я изучаю в веб-разработке, и вместе расти с сообществом разработчиков.",
-      "p3": "Я открыт к предложениям, где смогу приносить пользу, развиваться и создавать ценность. Если у вас есть подходящая возможность, свяжитесь со мной.",
-      "skillsTitle": "Мои Навыки",
-      "skillCategories": [
-        {
-          "title": "Frontend",
-          "items": [
-            "HTML",
-            "CSS",
-            "Sass",
-            "Адаптивный дизайн",
-            "JavaScript",
-            "React"
-          ]
-        },
-        {
-          "title": "Backend",
-          "items": [
-            "Node.js"
-          ]
-        },
-        {
-          "title": "Database",
-          "items": [
-            "MongoDB"
-          ]
-        },
-        {
-          "title": "Tools",
-          "items": [
-            "Git",
-            "Bootstrap"
-          ]
-        },
-        {
-          "title": "Other",
-          "items": [
-            "Решение задач"
-          ]
-        },
-        {
-          "title": "Languages",
-          "items": [
-            "Английский B2",
-            "Русский C2",
-            "Узбекский C2"
-          ]
-        }
-      ]
-    },
-    "project": {
-      "title": "Проекты",
-      "description": "В этом разделе будут мои ключевые практические проекты."
-    },
-    "skills": {
-      "title": "Навыки",
-      "description": "React, Next.js, TypeScript, Tailwind, Node.js и интеграции API."
-    },
-    "contact": {
-      "title": "Контакты",
-      "description": "Для сотрудничества свяжитесь со мной по email или в соцсетях."
-    }
-  },
-  "footer": {
-    "tagline": "Создаю чистые и производительные веб-продукты с современным frontend и full-stack стеком.",
-    "quickLinks": "Быстрые Ссылки",
-    "social": "Соцсети",
-    "rights": "© {{year}} Kabirjonov. Все права защищены."
-  }
+	"seo": {
+		"title": "Alex Resume | Портфолио разработчика",
+		"description": "Официальный сайт-резюме Alex: опыт, проекты, навыки и контактная информация."
+	},
+	"nav": {
+		"home": "Главная",
+		"about": "Обо мне",
+		"project": "Проекты",
+		"skills": "Навыки",
+		"contact": "Контакты"
+	},
+	"hero": {
+		"badge": "Портфолио",
+		"title": "Привет, я Alex",
+		"description": "Я занимаюсь frontend и full-stack разработкой. На сайте собраны мой опыт, проекты и контакты.",
+		"availability": "Открыт к новым проектам",
+		"primaryCta": "Смотреть проекты",
+		"secondaryCta": "Связаться",
+		"stackLabel": "Технологии",
+		"shortAbout": [
+			"Счастливый парень",
+			"Frontend разработчик",
+			"Backend разработчик",
+			"Брат",
+			"Сын"
+		]
+	},
+	"sections": {
+		"about": {
+			"title": "Обо мне",
+			"description": "Я специализируюсь на создании современных и быстрых веб-продуктов.",
+			"intro": "Здесь вы найдете больше информации обо мне, о том, чем я занимаюсь, и о моих текущих навыках в программировании и технологиях.",
+			"getToKnowTitle": "Узнайте Меня Лучше!",
+			"p1": "Я frontend-разработчик, который создает и развивает интерфейсы для веб-продуктов, решающих реальные задачи.",
+			"p2": "Мне нравится делиться тем, что я изучаю в веб-разработке, и вместе расти с сообществом разработчиков.",
+			"p3": "Я открыт к предложениям, где смогу приносить пользу, развиваться и создавать ценность. Если у вас есть подходящая возможность, свяжитесь со мной.",
+			"skillsTitle": "Мои Навыки",
+			"skillCategories": [
+				{
+					"title": "Frontend",
+					"items": [
+						"HTML",
+						"CSS",
+						"Sass",
+						"Адаптивный дизайн",
+						"JavaScript",
+						"React"
+					]
+				},
+				{
+					"title": "Backend",
+					"items": ["Node.js"]
+				},
+				{
+					"title": "Database",
+					"items": ["MongoDB"]
+				},
+				{
+					"title": "Tools",
+					"items": ["Git", "Bootstrap"]
+				},
+				{
+					"title": "Other",
+					"items": ["Решение задач"]
+				},
+				{
+					"title": "Languages",
+					"items": ["Английский B2", "Русский C2", "Узбекский C2"]
+				}
+			]
+		},
+		"project": {
+			"title": "Проекты",
+			"description": "Подборка проектов, где фокус был на производительности, чистой архитектуре и удобном UX.",
+			"viewLive": "Live",
+			"viewCode": "Код",
+			"items": [
+				{
+					"title": "DevLink Platform",
+					"description": "Full-stack платформа портфолио с авторизацией, dashboard и мультиязычными публичными страницами.",
+					"stack": ["Next.js", "TypeScript", "PostgreSQL", "Tailwind"],
+					"status": "production",
+					"liveUrl": "https://example.com",
+					"codeUrl": "https://github.com/yourusername/devlink"
+				},
+				{
+					"title": "TaskFlow CRM",
+					"description": "Внутренняя CRM для отдела продаж: роли, аналитические виджеты и управление контактами.",
+					"stack": ["React", "Node.js", "Express", "MongoDB"],
+					"status": "private",
+					"liveUrl": "https://example.com",
+					"codeUrl": "https://github.com/yourusername/taskflow-crm"
+				},
+				{
+					"title": "E-Commerce UI Kit",
+					"description": "Набор переиспользуемых storefront-компонентов и checkout-потоков для e-commerce.",
+					"stack": ["Next.js", "React Query", "Zustand", "Stripe"],
+					"status": "active",
+					"liveUrl": "https://example.com",
+					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit"
+				},
+				{
+					"title": "E-Commerce UI Kit",
+					"description": "Набор переиспользуемых storefront-компонентов и checkout-потоков для e-commerce.",
+					"stack": ["Next.js", "React Query", "Zustand", "Stripe"],
+					"status": "active",
+					"liveUrl": "https://example.com",
+					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit"
+				},
+				{
+					"title": "TaskFlow CRM",
+					"description": "Внутренняя CRM для отдела продаж: роли, аналитические виджеты и управление контактами.",
+					"stack": ["React", "Node.js", "Express", "MongoDB"],
+					"status": "private",
+					"liveUrl": "https://example.com",
+					"codeUrl": "https://github.com/yourusername/taskflow-crm"
+				},
+				{
+					"title": "E-Commerce UI Kit",
+					"description": "Набор переиспользуемых storefront-компонентов и checkout-потоков для e-commerce.",
+					"stack": ["Next.js", "React Query", "Zustand", "Stripe"],
+					"status": "active",
+					"liveUrl": "https://example.com",
+					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit"
+				},
+				{
+					"title": "E-Commerce UI Kit",
+					"description": "Набор переиспользуемых storefront-компонентов и checkout-потоков для e-commerce.",
+					"stack": ["Next.js", "React Query", "Zustand", "Stripe"],
+					"status": "active",
+					"liveUrl": "https://example.com",
+					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit"
+				}
+			]
+		},
+		"skills": {
+			"title": "Навыки",
+			"description": "React, Next.js, TypeScript, Tailwind, Node.js и интеграции API."
+		},
+		"contact": {
+			"title": "Контакты",
+			"description": "Для сотрудничества свяжитесь со мной по email или в соцсетях.",
+			"form": {
+				"fullName": "Полное имя",
+				"fullNamePlaceholder": "Введите ваше полное имя",
+				"phone": "Номер телефона",
+				"phonePlaceholder": "Введите номер телефона",
+				"description": "Описание",
+				"descriptionPlaceholder": "Опишите ваш запрос или детали проекта",
+				"file": "Файл (необязательно)",
+				"fileHint": "Необязательно. Максимальный размер файла: 5MB.",
+				"submit": "Отправить сообщение",
+				"submitting": "Отправка...",
+				"success": "Ваше сообщение успешно отправлено.",
+				"validation": {
+					"fullNameRequired": "Полное имя обязательно",
+					"fullNameMin": "Полное имя должно быть не короче 2 символов",
+					"phoneRequired": "Номер телефона обязателен",
+					"phoneMin": "Номер телефона должен быть не короче 7 символов",
+					"descriptionRequired": "Описание обязательно",
+					"descriptionMin": "Описание должно быть не короче 10 символов",
+					"phoneInvalid": "Введите корректный номер телефона",
+					"fileMaxSize": "Размер файла должен быть меньше 5MB"
+				},
+				"error": "Произошла ошибка. Попробуйте снова."
+			}
+		}
+	},
+	"footer": {
+		"tagline": "Создаю чистые и производительные веб-продукты с современным frontend и full-stack стеком.",
+		"quickLinks": "Быстрые Ссылки",
+		"social": "Соцсети",
+		"rights": "© {{year}} Kabirjonov. Все права защищены."
+	}
 }
