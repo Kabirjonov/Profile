@@ -1,7 +1,7 @@
 {
 	"seo": {
-		"title": "Alex Resume | Dasturchi portfolio",
-		"description": "Alexning rasmiy resume sayti: tajriba, loyihalar, ko'nikmalar va aloqa ma'lumotlari."
+		"title": "Oxunjonjon Kabirjonov Resume | Dasturchi portfolio",
+		"description": "Oxunjonjon Kabirjonovning rasmiy resume sayti: tajriba, loyihalar, ko'nikmalar va aloqa ma'lumotlari."
 	},
 	"nav": {
 		"home": "Bosh sahifa",
@@ -12,10 +12,10 @@
 	},
 	"hero": {
 		"badge": "Portfolio",
-		"title": "Salom, men Alex",
+		"title": "Salom, men Oxunjonjon Kabirjonov",
 		"description": "Frontend va full-stack yo'nalishida ishlovchi dasturchiman. Bu sahifada tajribam, loyihalarim va bog'lanish ma'lumotlari joylashadi.",
 		"availability": "Yangi loyihalar uchun ochiqman",
-		"primaryCta": "Loyihalarni Ko'rish",
+		"primaryCta": "Resumeni yuklab olish",
 		"secondaryCta": "Bog'lanish",
 		"stackLabel": "Texnologiyalar",
 		"shortAbout": [
@@ -43,22 +43,27 @@
 						"HTML",
 						"CSS",
 						"Sass",
-						"Responsive Dizayn",
+						"Tailwind",
+						"Responsive Design",
 						"JavaScript",
-						"React"
+						"TypeScript",
+						"React",
+						"Next",
+						"WebSocket",
+						"Zustand"
 					]
 				},
 				{
 					"title": "Backend",
-					"items": ["Node.js"]
+					"items": ["Node.js", "Express.js", "Nest.js"]
 				},
 				{
 					"title": "Database",
-					"items": ["MongoDB"]
+					"items": ["MongoDB", "PostgrSQL"]
 				},
 				{
 					"title": "Tools",
-					"items": ["Git", "Bootstrap"]
+					"items": ["Git", "Docker"]
 				},
 				{
 					"title": "Other",
@@ -77,12 +82,46 @@
 			"viewCode": "Kod",
 			"items": [
 				{
-					"title": "DevLink Platform",
+					"title": "RoofUz",
 					"description": "Avtorizatsiya, dashboard va ko'p tilli ommaviy sahifalarga ega full-stack portfolio platforma.",
-					"stack": ["Next.js", "TypeScript", "PostgreSQL", "Tailwind"],
+					"stack": [
+						"React.js",
+						"TypeScript",
+						"Tailwind",
+						"Express.js",
+						"MongoDB"
+					],
 					"status": "production",
+					"liveUrl": "https://e-seller-a7z6.onrender.com",
+					"codeUrl": "https://github.com/Kabirjonov/E-Seller",
+					"category": "Fullstack"
+				},
+				{
+					"title": "E-Blog Backend",
+					"description": "Sotuv jamoasi uchun role-permission, analytics vidjetlar va kontakt boshqaruviga ega ichki CRM.",
+					"stack": ["React", "Node.js", "Express", "MongoDB"],
+					"status": "private",
+					"liveUrl": "https://e-blog-backend.onrender.com",
+					"codeUrl": "https://github.com/Kabirjonov/E-Blog-Backend",
+					"category": "Backend"
+				},
+				{
+					"title": "E-Blog Frontend",
+					"description": "E-commerce uchun qayta ishlatiladigan komponentlar, checkout oqimlari va dizayn tokenlari to'plami.",
+					"stack": ["Next.js", "React Query", "Zustand", "Stripe"],
+					"status": "active",
+					"liveUrl": "https://e-blog-aa7f.onrender.com",
+					"codeUrl": "https://github.com/Kabirjonov/E-Blog-frontend",
+					"category": "Frontend"
+				},
+				{
+					"title": "E-Commerce UI Kit",
+					"description": "E-commerce uchun qayta ishlatiladigan komponentlar, checkout oqimlari va dizayn tokenlari to'plami.",
+					"stack": ["Next.js", "React Query", "Zustand", "Stripe"],
+					"status": "active",
 					"liveUrl": "https://example.com",
-					"codeUrl": "https://github.com/yourusername/devlink"
+					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit",
+					"category": "Boshqa"
 				},
 				{
 					"title": "TaskFlow CRM",
@@ -90,7 +129,8 @@
 					"stack": ["React", "Node.js", "Express", "MongoDB"],
 					"status": "private",
 					"liveUrl": "https://example.com",
-					"codeUrl": "https://github.com/yourusername/taskflow-crm"
+					"codeUrl": "https://github.com/yourusername/taskflow-crm",
+					"category": "Boshqa"
 				},
 				{
 					"title": "E-Commerce UI Kit",
@@ -98,7 +138,8 @@
 					"stack": ["Next.js", "React Query", "Zustand", "Stripe"],
 					"status": "active",
 					"liveUrl": "https://example.com",
-					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit"
+					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit",
+					"category": "Boshqa"
 				},
 				{
 					"title": "E-Commerce UI Kit",
@@ -106,33 +147,11 @@
 					"stack": ["Next.js", "React Query", "Zustand", "Stripe"],
 					"status": "active",
 					"liveUrl": "https://example.com",
-					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit"
-				},
-				{
-					"title": "TaskFlow CRM",
-					"description": "Sotuv jamoasi uchun role-permission, analytics vidjetlar va kontakt boshqaruviga ega ichki CRM.",
-					"stack": ["React", "Node.js", "Express", "MongoDB"],
-					"status": "private",
-					"liveUrl": "https://example.com",
-					"codeUrl": "https://github.com/yourusername/taskflow-crm"
-				},
-				{
-					"title": "E-Commerce UI Kit",
-					"description": "E-commerce uchun qayta ishlatiladigan komponentlar, checkout oqimlari va dizayn tokenlari to'plami.",
-					"stack": ["Next.js", "React Query", "Zustand", "Stripe"],
-					"status": "active",
-					"liveUrl": "https://example.com",
-					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit"
-				},
-				{
-					"title": "E-Commerce UI Kit",
-					"description": "E-commerce uchun qayta ishlatiladigan komponentlar, checkout oqimlari va dizayn tokenlari to'plami.",
-					"stack": ["Next.js", "React Query", "Zustand", "Stripe"],
-					"status": "active",
-					"liveUrl": "https://example.com",
-					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit"
+					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit",
+					"category": "Boshqa"
 				}
-			]
+			],
+			"browseAll": "Barcha loyihalarni ochish"
 		},
 		"skills": {
 			"title": "Ko'nikmalar",
@@ -172,5 +191,15 @@
 		"quickLinks": "Tezkor Havolalar",
 		"social": "Ijtimoiy Tarmoqlar",
 		"rights": "© {{year}} Kabirjonov. Barcha huquqlar himoyalangan."
+	},
+	"projectsPage": {
+		"title": "Barcha Loyihalar",
+		"description": "Loyihalarni kategoriya, status yoki kalit so'z bo'yicha filterlab va qidirib ko'ring.",
+		"searchPlaceholder": "Loyihalarni qidiring...",
+		"filters": {
+			"allCategories": "Barcha kategoriyalar",
+			"allStatuses": "Barcha statuslar"
+		},
+		"empty": "Filter bo'yicha loyiha topilmadi."
 	}
 }

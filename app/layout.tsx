@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
-import { Navbar } from "@/components/navbar";
 import { getDictionary } from "@/lib/dictionaries";
 import { getRequestLocale } from "@/lib/request-locale";
 import { siteConfig } from "@/lib/site";
@@ -42,7 +41,6 @@ export default async function RootLayout({
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
 				<AppProviders locale={locale} messages={dictionary}>
-					<Navbar />
 					{children}
 				</AppProviders>
 			</body>

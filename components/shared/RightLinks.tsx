@@ -4,6 +4,7 @@ import {
 	Instagram,
 	Linkedin,
 	Mail,
+	Phone,
 	Send,
 } from "lucide-react";
 import Link from "next/link";
@@ -28,7 +29,7 @@ export const SocialLinks = [
 	},
 	{
 		name: "Download CV",
-		link: "https://github.com/yourusername",
+		link: "/resume.pdf",
 		icon: Download,
 	},
 ] as const;

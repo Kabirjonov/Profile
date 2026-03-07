@@ -25,7 +25,7 @@ export function Navbar() {
 					href='/'
 					className='capitalize text-lg font-semibold text-primary tracking-widest'
 				>
-					kabirjonov
+					kab1rjonov
 				</Link>
 
 				<div className='hidden md:flex items-center gap-3 overflow-x-auto px-2 md:gap-4 lg:gap-6 '>

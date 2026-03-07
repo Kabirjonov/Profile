@@ -18,7 +18,7 @@ export function Footer() {
 						href='/'
 						className='text-lg font-semibold tracking-widest text-primary capitalize'
 					>
-						kabirjonov
+						kab1rjonov
 					</Link>
 					<p className='mt-3 max-w-xs text-sm text-muted-foreground'>
 						{t("footer.tagline")}

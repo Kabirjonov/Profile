@@ -1,7 +1,7 @@
 {
 	"seo": {
-		"title": "Alex Resume | Портфолио разработчика",
-		"description": "Официальный сайт-резюме Alex: опыт, проекты, навыки и контактная информация."
+		"title": "Охунджон Кабирджонов Resume | Портфолио разработчика",
+		"description": "Официальный сайт-резюме Охунджон Кабирджонов: опыт, проекты, навыки и контактная информация."
 	},
 	"nav": {
 		"home": "Главная",
@@ -12,10 +12,10 @@
 	},
 	"hero": {
 		"badge": "Портфолио",
-		"title": "Привет, я Alex",
+		"title": "Привет, я Охунджон Кабирджонов",
 		"description": "Я занимаюсь frontend и full-stack разработкой. На сайте собраны мой опыт, проекты и контакты.",
 		"availability": "Открыт к новым проектам",
-		"primaryCta": "Смотреть проекты",
+		"primaryCta": "Скачать резюме",
 		"secondaryCta": "Связаться",
 		"stackLabel": "Технологии",
 		"shortAbout": [
@@ -43,22 +43,28 @@
 						"HTML",
 						"CSS",
 						"Sass",
+						"Tailwind",
 						"Адаптивный дизайн",
 						"JavaScript",
-						"React"
+						"TypeScript",
+						"React",
+						"Next",
+						"WebSocket",
+						"Zustand"
 					]
 				},
+
 				{
 					"title": "Backend",
-					"items": ["Node.js"]
+					"items": ["Node.js", "Express.js", "Nest.js"]
 				},
 				{
 					"title": "Database",
-					"items": ["MongoDB"]
+					"items": ["MongoDB", "PostgrSQL"]
 				},
 				{
 					"title": "Tools",
-					"items": ["Git", "Bootstrap"]
+					"items": ["Git", "Docker"]
 				},
 				{
 					"title": "Other",
@@ -77,12 +83,40 @@
 			"viewCode": "Код",
 			"items": [
 				{
-					"title": "DevLink Platform",
+					"title": "RoofUz",
 					"description": "Full-stack платформа портфолио с авторизацией, dashboard и мультиязычными публичными страницами.",
 					"stack": ["Next.js", "TypeScript", "PostgreSQL", "Tailwind"],
 					"status": "production",
+					"liveUrl": "https://e-seller-a7z6.onrender.com",
+					"codeUrl": "https://github.com/Kabirjonov/E-Seller",
+					"category": "Fullstack"
+				},
+				{
+					"title": "E-Blog Backend",
+					"description": "Внутренняя CRM для отдела продаж: роли, аналитические виджеты и управление контактами.",
+					"stack": ["React", "Node.js", "Express", "MongoDB"],
+					"status": "private",
+					"liveUrl": "https://e-blog-backend.onrender.com",
+					"codeUrl": "https://github.com/Kabirjonov/E-Blog-Backend",
+					"category": "Backend"
+				},
+				{
+					"title": "E-Blog Frontend",
+					"description": "Набор переиспользуемых storefront-компонентов и checkout-потоков для e-commerce.",
+					"stack": ["Next.js", "React Query", "Zustand", "Stripe"],
+					"status": "active",
+					"liveUrl": "https://e-blog-aa7f.onrender.com",
+					"codeUrl": "https://github.com/Kabirjonov/E-Blog-frontend",
+					"category": "Frontend"
+				},
+				{
+					"title": "E-Commerce UI Kit",
+					"description": "Набор переиспользуемых storefront-компонентов и checkout-потоков для e-commerce.",
+					"stack": ["Next.js", "React Query", "Zustand", "Stripe"],
+					"status": "active",
 					"liveUrl": "https://example.com",
-					"codeUrl": "https://github.com/yourusername/devlink"
+					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit",
+					"category": "Другое"
 				},
 				{
 					"title": "TaskFlow CRM",
@@ -90,7 +124,8 @@
 					"stack": ["React", "Node.js", "Express", "MongoDB"],
 					"status": "private",
 					"liveUrl": "https://example.com",
-					"codeUrl": "https://github.com/yourusername/taskflow-crm"
+					"codeUrl": "https://github.com/yourusername/taskflow-crm",
+					"category": "Другое"
 				},
 				{
 					"title": "E-Commerce UI Kit",
@@ -98,7 +133,8 @@
 					"stack": ["Next.js", "React Query", "Zustand", "Stripe"],
 					"status": "active",
 					"liveUrl": "https://example.com",
-					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit"
+					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit",
+					"category": "Другое"
 				},
 				{
 					"title": "E-Commerce UI Kit",
@@ -106,33 +142,11 @@
 					"stack": ["Next.js", "React Query", "Zustand", "Stripe"],
 					"status": "active",
 					"liveUrl": "https://example.com",
-					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit"
-				},
-				{
-					"title": "TaskFlow CRM",
-					"description": "Внутренняя CRM для отдела продаж: роли, аналитические виджеты и управление контактами.",
-					"stack": ["React", "Node.js", "Express", "MongoDB"],
-					"status": "private",
-					"liveUrl": "https://example.com",
-					"codeUrl": "https://github.com/yourusername/taskflow-crm"
-				},
-				{
-					"title": "E-Commerce UI Kit",
-					"description": "Набор переиспользуемых storefront-компонентов и checkout-потоков для e-commerce.",
-					"stack": ["Next.js", "React Query", "Zustand", "Stripe"],
-					"status": "active",
-					"liveUrl": "https://example.com",
-					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit"
-				},
-				{
-					"title": "E-Commerce UI Kit",
-					"description": "Набор переиспользуемых storefront-компонентов и checkout-потоков для e-commerce.",
-					"stack": ["Next.js", "React Query", "Zustand", "Stripe"],
-					"status": "active",
-					"liveUrl": "https://example.com",
-					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit"
+					"codeUrl": "https://github.com/yourusername/ecommerce-ui-kit",
+					"category": "Другое"
 				}
-			]
+			],
+			"browseAll": "Открыть страницу проектов"
 		},
 		"skills": {
 			"title": "Навыки",
@@ -172,5 +186,15 @@
 		"quickLinks": "Быстрые Ссылки",
 		"social": "Соцсети",
 		"rights": "© {{year}} Kabirjonov. Все права защищены."
+	},
+	"projectsPage": {
+		"title": "Все Проекты",
+		"description": "Фильтруйте и ищите проекты по категории, статусу и ключевым словам.",
+		"searchPlaceholder": "Поиск проектов...",
+		"filters": {
+			"allCategories": "Все категории",
+			"allStatuses": "Все статусы"
+		},
+		"empty": "По вашему фильтру проекты не найдены."
 	}
 }
