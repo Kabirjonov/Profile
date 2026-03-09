@@ -16,7 +16,7 @@ export const SocialLinks = [
 		link: "https://www.linkedin.com/in/oxunjon-kabirjanov-022b5325b/",
 		icon: Linkedin,
 	},
-	{ name: "Mail", link: "https://github.com/yourusername", icon: Mail },
+	{ name: "Mail", link: "mailto:info.kabirjonov@gmail.com", icon: Mail },
 	{
 		name: "Instagram",
 		link: "https://www.instagram.com/kab1rjonov_o/",
@@ -26,6 +26,11 @@ export const SocialLinks = [
 		name: "Telegram",
 		link: "https://t.me/kabirjonov_o",
 		icon: Send,
+	},
+	{
+		name: "+998 94 668 4005",
+		link: "tel:+998946684005",
+		icon: Phone,
 	},
 	{
 		name: "Download CV",
@@ -40,7 +45,7 @@ export default function RightLinks() {
 				<Link
 					href={item.link}
 					key={item.name}
-					target='_blank'
+					target={item.link.startsWith("http") ? "_blank" : "_self"}
 					className='relative p-2 group rounded-full border border-border  transition hover:bg-primary'
 				>
 					<item.icon

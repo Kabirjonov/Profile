@@ -5,7 +5,7 @@ import { getDictionary } from "@/lib/dictionaries";
 import { getRequestLocale } from "@/lib/request-locale";
 import { siteConfig } from "@/lib/site";
 import { AppProviders } from "@/providers";
-
+import ChatWidget from "@/components/ChatWidget";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -42,6 +42,7 @@ export default async function RootLayout({
 			>
 				<AppProviders locale={locale} messages={dictionary}>
 					{children}
+					<ChatWidget />
 				</AppProviders>
 			</body>
 		</html>
