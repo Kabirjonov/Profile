@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
@@ -15,9 +15,8 @@ export function Navbar() {
 	const [isMobile, setIsMobile] = useState(false);
 	const { t } = useTranslation();
 	const pathname = usePathname();
-	useEffect(() => {
-		setIsMobile(false);
-	}, [pathname]);
+	const isHomePage = pathname === "/";
+
 	return (
 		<header className='sticky top-0 z-50 border-b border-border/70 bg-background/80 backdrop-blur relative'>
 			<nav className='mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 sm:px-10'>
@@ -35,7 +34,8 @@ export function Navbar() {
 							href={link.href}
 							onClick={() => setActiveLink(link.href)}
 							className={`text-sm font-medium transition-colors hover:text-foreground ${
-								link.href === activeLink
+								(link.href === "/" && isHomePage && activeLink === "/") ||
+								(link.href !== "/" && link.href === activeLink)
 									? " text-foreground"
 									: "text-muted-foreground"
 							}`}
@@ -91,9 +91,14 @@ export function Navbar() {
 								<Link
 									key={link.href}
 									href={link.href}
-									onClick={() => setIsMobile(v => !v)}
+									onClick={() => {
+										setIsMobile(false);
+										setActiveLink(link.href);
+									}}
 									className={`rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-muted/40 ${
-										active ? "text-foreground" : "text-muted-foreground"
+										active || link.href === activeLink
+											? "text-foreground"
+											: "text-muted-foreground"
 									}`}
 								>
 									{t(link.key)}

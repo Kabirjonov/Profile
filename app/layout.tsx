@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
+import { JsonLd } from "@/components/seo/json-ld";
 
 import { getDictionary } from "@/lib/dictionaries";
 import { getRequestLocale } from "@/lib/request-locale";
-import { siteConfig } from "@/lib/site";
+import { buildPersonSchema, buildRootMetadata, buildWebsiteSchema } from "@/lib/seo";
 import { AppProviders } from "@/providers";
 import ChatWidget from "@/components/ChatWidget";
 import "./globals.css";
@@ -19,41 +20,7 @@ const geistMono = Geist_Mono({
 	subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-	metadataBase: new URL(siteConfig.url),
-	title: {
-		default: siteConfig.name,
-		template: `%s | ${siteConfig.name}`,
-	},
-	description: siteConfig.description,
-	applicationName: siteConfig.fullName,
-	authors: [{ name: siteConfig.fullName, url: siteConfig.url }],
-	creator: siteConfig.fullName,
-	publisher: siteConfig.fullName,
-	keywords: [
-		"Kabirjonov Oxunjon",
-		"Oxunjon Kabirjonov",
-		"Kabirjonov",
-		"Oxunjon",
-		"Frontend Developer Uzbekistan",
-		"Full Stack Developer Portfolio",
-	],
-	alternates: {
-		canonical: "/",
-	},
-	openGraph: {
-		type: "website",
-		url: siteConfig.url,
-		title: siteConfig.name,
-		description: siteConfig.description,
-		siteName: siteConfig.fullName,
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: siteConfig.name,
-		description: siteConfig.description,
-	},
-};
+export const metadata: Metadata = buildRootMetadata();
 
 export default async function RootLayout({
 	children,
@@ -62,15 +29,8 @@ export default async function RootLayout({
 }>) {
 	const locale = await getRequestLocale();
 	const dictionary = getDictionary(locale);
-	const personJsonLd = {
-		"@context": "https://schema.org",
-		"@type": "Person",
-		name: siteConfig.fullName,
-		alternateName: siteConfig.alternateName,
-		url: siteConfig.url,
-		sameAs: [siteConfig.github],
-		jobTitle: "Frontend and Full-Stack Developer",
-	};
+	const personJsonLd = buildPersonSchema();
+	const websiteJsonLd = buildWebsiteSchema();
 
 	return (
 		<html lang={locale}>
@@ -100,12 +60,8 @@ export default async function RootLayout({
 						});
 					`}
 				</Script>
-				<Script
-					id='person-jsonld'
-					type='application/ld+json'
-					strategy='afterInteractive'
-					dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
-				/>
+				<JsonLd id='person-jsonld' data={personJsonLd} />
+				<JsonLd id='website-jsonld' data={websiteJsonLd} />
 				<noscript>
 					<div>
 						{/* eslint-disable-next-line @next/next/no-img-element */}
