@@ -40,7 +40,7 @@ export const SocialLinks = [
 ] as const;
 export default function RightLinks() {
 	return (
-		<div className='fixed left-0 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-4 shadow shadow-accent-foreground  p-2 rounded-r-2xl'>
+		<div className='fixed left-0 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-4 md:shadow shadow-accent-foreground  p-2 rounded-r-2xl bg-background border '>
 			{SocialLinks.map(item => (
 				<Link
 					href={item.link}
