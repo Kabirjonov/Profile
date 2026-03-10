@@ -5,7 +5,11 @@ import { JsonLd } from "@/components/seo/json-ld";
 
 import { getDictionary } from "@/lib/dictionaries";
 import { getRequestLocale } from "@/lib/request-locale";
-import { buildPersonSchema, buildRootMetadata, buildWebsiteSchema } from "@/lib/seo";
+import {
+	buildPersonSchema,
+	buildRootMetadata,
+	buildWebsiteSchema,
+} from "@/lib/seo";
 import { AppProviders } from "@/providers";
 import ChatWidget from "@/components/ChatWidget";
 import "./globals.css";
