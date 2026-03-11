@@ -158,10 +158,10 @@
 	body > .__ymDebugger .__ymContent,
 	body > .__ymDebugger .__ymContent.__ymHidden,
 	body > .__ymDebugger .__ymResize {
+		display: none;
 		height: 0 !important;
 		min-height: 0 !important;
 	}
-
 	.dark body {
 		background-image:
 			radial-gradient(
