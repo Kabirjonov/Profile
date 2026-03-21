@@ -4,6 +4,8 @@ import { useTranslation } from "react-i18next";
 import { useContactForm } from "@/hooks/useContactForm";
 import { Controller } from "react-hook-form";
 import { formatUzPhone } from "@/lib/PhoneFormater";
+import { SocialLinks } from "../shared/RightLinks";
+import Link from "next/link";
 
 export function ContactSection() {
 	const { t } = useTranslation();
@@ -14,13 +16,42 @@ export function ContactSection() {
 	return (
 		<section
 			id='contact'
-			className='mx-auto w-full max-w-6xl px-6 py-20 sm:px-10'
+			className='mx-auto w-full max-w-6xl px-6 py-16 sm:px-10'
 		>
 			<div className='rounded-2xl border border-border/80 bg-card/85 p-6 shadow-sm backdrop-blur-sm sm:p-8'>
-				<div className='mx-auto max-w-3xl text-center'>
+				<div className='mx-auto max-w-3xl text-center '>
 					<h2 className='text-3xl font-bold tracking-tight text-foreground sm:text-4xl'>
 						{t("sections.contact.title")}
 					</h2>
+					<div className='flex mx-auto gap-2 justify-center-safe my-2'>
+						{" "}
+						{SocialLinks.map(item => (
+							<Link
+								href={item.link}
+								key={item.name}
+								target={item.link.startsWith("http") ? "_blank" : "_self"}
+								className=' p-2 group rounded-full border border-border  transition hover:bg-primary relative'
+							>
+								<item.icon
+									size={20}
+									className='group-hover:text-card transition-colors transition'
+								/>
+								<span
+									className='
+            absolute left-full ml-3
+            whitespace-nowrap rounded-md
+            bg-foreground text-background
+            px-3 py-1 text-xs font-medium
+            opacity-0 translate-x-2
+            transition-all duration-200
+            group-hover:opacity-100 group-hover:translate-x-0
+          '
+								>
+									{item.name}
+								</span>
+							</Link>
+						))}
+					</div>
 					<div className='mx-auto mt-4 h-1 w-16 rounded-full bg-primary/80' />
 					<p className='mx-auto mt-5 max-w-2xl break-words text-sm leading-relaxed text-muted-foreground sm:text-base'>
 						{t("sections.contact.description")}

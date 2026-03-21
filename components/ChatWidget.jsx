@@ -14,6 +14,12 @@ const WIDGET_COPY = {
 		fallback:
 			"Hozircha javob bera olmayapman. Iltimos keyinroq urinib ko‘ring.",
 		noReply: "Javob kelmadi",
+		suggestions: [
+			"O'zingiz haqingizda qisqacha aytib bera olasizmi?",
+			"Qaysi texnologiyalar bilan ko'proq ishlagansiz?",
+			"So'nggi loyihalaringizdan qaysilarini ko'rsata olasiz?",
+			"Qanday formatda ishlashga ochiqsiz?",
+		],
 	},
 	ru: {
 		title: "Помощник",
@@ -23,6 +29,12 @@ const WIDGET_COPY = {
 		typing: "Печатает...",
 		fallback: "Сейчас не могу ответить. Попробуйте позже.",
 		noReply: "Ответ не получен",
+		suggestions: [
+			"Расскажите коротко о себе",
+			"С какими технологиями вы работаете чаще всего?",
+			"Какие последние проекты можете показать?",
+			"К какому формату работы вы открыты?",
+		],
 	},
 	en: {
 		title: "Assistant",
@@ -32,6 +44,12 @@ const WIDGET_COPY = {
 		typing: "Typing...",
 		fallback: "I cannot answer right now. Please try again later.",
 		noReply: "No reply received",
+		suggestions: [
+			"Can you briefly introduce yourself?",
+			"Which technologies do you work with most?",
+			"Which recent projects can you show?",
+			"What work format are you open to?",
+		],
 	},
 };
 
@@ -63,9 +81,18 @@ export default function ChatWidget() {
 	const [isSending, setIsSending] = useState(false);
 	const [isTyping, setIsTyping] = useState(false);
 	const [messages, setMessages] = useState([]);
+	const [showSuggestions, setShowSuggestions] = useState(false);
 	const scrollRef = useRef(null);
+	const autoCloseTimeoutRef = useRef(null);
 	const activeLanguage = selectedLanguage ?? "uz";
 	const copy = WIDGET_COPY[activeLanguage];
+
+	const clearAutoCloseTimeout = () => {
+		if (autoCloseTimeoutRef.current) {
+			clearTimeout(autoCloseTimeoutRef.current);
+			autoCloseTimeoutRef.current = null;
+		}
+	};
 
 	useEffect(() => {
 		if (!scrollRef.current) return;
@@ -75,22 +102,28 @@ export default function ChatWidget() {
 		});
 	}, [messages, open, isTyping]);
 
+	useEffect(() => () => clearAutoCloseTimeout(), []);
+
 	const openWidget = () => {
+		clearAutoCloseTimeout();
 		setOpen(true);
 		setSelectedLanguage(null);
 		setMessages([]);
 		setInput("");
 		setIsSending(false);
 		setIsTyping(false);
+		setShowSuggestions(false);
 	};
 
 	const closeWidget = () => {
+		clearAutoCloseTimeout();
 		setOpen(false);
 		setSelectedLanguage(null);
 		setMessages([]);
 		setInput("");
 		setIsSending(false);
 		setIsTyping(false);
+		setShowSuggestions(false);
 	};
 
 	const animateTyping = async text =>
@@ -125,14 +158,17 @@ export default function ChatWidget() {
 	const chooseLanguage = async language => {
 		setSelectedLanguage(language);
 		setInput("");
+		setShowSuggestions(false);
 		setMessages(prev => [...prev, { role: "bot", text: "" }]);
 		await animateTyping(getWelcomeMessage(language));
+		setShowSuggestions(true);
 	};
 
-	const sendMessage = async () => {
-		if (!input.trim() || isSending || isTyping || !selectedLanguage) return;
-		const messageText = input.trim();
+	const sendMessage = async rawMessage => {
+		const messageText = (rawMessage ?? input).trim();
+		if (!messageText || isSending || isTyping || !selectedLanguage) return;
 
+		setShowSuggestions(false);
 		setMessages(prev => [...prev, { role: "user", text: messageText }]);
 		setInput("");
 		setIsSending(true);
@@ -157,6 +193,12 @@ export default function ChatWidget() {
 			const contacts = Array.isArray(data.contacts) ? data.contacts : undefined;
 			setMessages(prev => [...prev, { role: "bot", text: "", contacts }]);
 			await animateTyping(replyText);
+			if (data.intent === "insult") {
+				clearAutoCloseTimeout();
+				autoCloseTimeoutRef.current = setTimeout(() => {
+					closeWidget();
+				}, 2000);
+			}
 		} catch {
 			setMessages(prev => [...prev, { role: "bot", text: "" }]);
 			await animateTyping(copy.fallback);
@@ -269,6 +311,20 @@ export default function ChatWidget() {
 										</div>
 									</div>
 								))}
+								{showSuggestions && (
+									<div className='flex flex-col items-end gap-2 pt-2'>
+										{copy.suggestions.map(question => (
+											<button
+												key={question}
+												type='button'
+												onClick={() => sendMessage(question)}
+												className='max-w-[92%] rounded-2xl rounded-br-sm bg-primary/18 px-4 py-3 text-right text-sm font-medium text-primary transition hover:bg-primary/24'
+											>
+												{question}
+											</button>
+										))}
+									</div>
+								)}
 							</div>
 
 							<div className='flex items-center gap-2 border-t border-border/70 bg-card px-3 py-3 sm:px-4'>

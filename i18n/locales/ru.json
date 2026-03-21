@@ -119,12 +119,12 @@
 					"category": "Другое"
 				},
 				{
-					"title": "TaskFlow CRM",
-					"description": "Внутренняя CRM для отдела продаж: роли, аналитические виджеты и управление контактами.",
-					"stack": ["React", "Node.js", "Express", "MongoDB"],
-					"status": "private",
-					"liveUrl": "https://example.com",
-					"codeUrl": "https://github.com/yourusername/taskflow-crm",
+					"title": "E-Messager",
+					"description": "Фронтенд мессенджера в стиле Telegram с экранами чатов, авторизацией и адаптивной раскладкой диалогов.",
+					"stack": ["React", "TypeScript", "Tailwind CSS"],
+					"status": "active",
+					"liveUrl": "",
+					"codeUrl": "https://github.com/Kabirjonov/Telegram-clone-Front.git",
 					"category": "Другое"
 				},
 				{
@@ -196,5 +196,21 @@
 			"allStatuses": "Все статусы"
 		},
 		"empty": "По вашему фильтру проекты не найдены."
+	},
+	"chat": {
+		"title": "Помощник",
+		"status": "Online",
+		"greeting": "Здравствуйте. Чем могу помочь?",
+		"placeholder": "Сообщение",
+		"send": "Отправить",
+		"open": "Открыть чат",
+		"close": "Закрыть чат",
+		"error": "Произошла ошибка. Попробуйте еще раз.",
+		"suggestions": [
+			"У меня есть профильный опыт",
+			"Можно без опыта?",
+			"Какой график работы?",
+			"Где находится место работы?"
+		]
 	}
 }

@@ -118,12 +118,12 @@
 					"category": "Other"
 				},
 				{
-					"title": "TaskFlow CRM",
-					"description": "Internal CRM for sales teams with role permissions, analytics widgets, and contact management.",
-					"stack": ["React", "Node.js", "Express", "MongoDB"],
-					"status": "private",
-					"liveUrl": "https://example.com",
-					"codeUrl": "https://github.com/yourusername/taskflow-crm",
+					"title": "E-Messager",
+					"description": "Telegram-style messaging frontend with chat screens, authentication flow, and responsive conversation layouts.",
+					"stack": ["React", "TypeScript", "Tailwind CSS"],
+					"status": "active",
+					"liveUrl": "",
+					"codeUrl": "https://github.com/Kabirjonov/Telegram-clone-Front.git",
 					"category": "Other"
 				},
 				{
@@ -195,5 +195,21 @@
 			"allStatuses": "All statuses"
 		},
 		"empty": "No project matched your filter."
+	},
+	"chat": {
+		"title": "Assistant",
+		"status": "Online",
+		"greeting": "Hello. How can I help you?",
+		"placeholder": "Write a message...",
+		"send": "Send",
+		"open": "Open chat",
+		"close": "Close chat",
+		"error": "Something went wrong. Please try again.",
+		"suggestions": [
+			"I have relevant experience",
+			"Can I apply without experience?",
+			"What is the work schedule?",
+			"Where is the workplace located?"
+		]
 	}
 }

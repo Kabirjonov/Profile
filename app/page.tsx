@@ -3,10 +3,7 @@ import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Navbar } from "@/components/navbar";
 import { AboutSection } from "@/components/sections/about-section";
-import {
-	BrandSeoSection,
-	FaqSection,
-} from "@/components/sections/brand-seo-section";
+import { BrandSeoSection } from "@/components/sections/brand-seo-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { ProjectSection } from "@/components/sections/project-section";
@@ -41,14 +38,15 @@ export default async function HomePage() {
 			<div className='relative min-h-screen bg-background text-foreground overflow-hidden'>
 				<BackgroundParticles />
 				<RightLinks />
+				{/* <ChatWidget /> */}
 				<div className='relative z-10'>
 					<HeroSection />
-					{/* <BrandSeoSection /> */}
+					<BrandSeoSection />
 					<AboutSection />
 					<ProjectSection />
 					{/* <SkillsSection /> */}
-					<ContactSection />
 					{/* <FaqSection /> */}
+					<ContactSection />
 					<Footer />
 				</div>
 			</div>

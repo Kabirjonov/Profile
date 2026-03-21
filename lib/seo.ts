@@ -30,8 +30,16 @@ type PageMetadataInput = {
 };
 
 export function buildRootMetadata(): Metadata {
+	const rootUrl = siteConfig.isPlaceholderDomain
+		? undefined
+		: new URL(siteConfig.url);
+	const canonicalUrl = siteConfig.isPlaceholderDomain
+		? undefined
+		: toAbsoluteUrl("/");
+	const ogImages = [toAbsoluteUrl("/profile.png")];
+
 	return {
-		metadataBase: new URL(siteConfig.url),
+		metadataBase: rootUrl,
 		title: {
 			default: siteConfig.name,
 			template: `%s | ${siteConfig.fullName}`,
@@ -42,23 +50,24 @@ export function buildRootMetadata(): Metadata {
 		creator: siteConfig.fullName,
 		publisher: siteConfig.fullName,
 		keywords: [...brandedKeywords],
-		alternates: {
-			canonical: toAbsoluteUrl("/"),
-		},
+		alternates: canonicalUrl ? { canonical: canonicalUrl } : undefined,
 		openGraph: {
 			type: "website",
-			url: toAbsoluteUrl("/"),
+			url: canonicalUrl,
 			title: siteConfig.name,
 			description: siteConfig.description,
 			siteName: siteConfig.fullName,
-			images: [toAbsoluteUrl("/profile.png")],
+			images: ogImages,
 		},
 		twitter: {
 			card: "summary_large_image",
 			title: siteConfig.name,
 			description: siteConfig.description,
-			images: [toAbsoluteUrl("/profile.png")],
+			images: ogImages,
 		},
+		verification: siteConfig.googleSiteVerification
+			? { google: siteConfig.googleSiteVerification }
+			: undefined,
 	};
 }
 
@@ -70,7 +79,9 @@ export function buildPageMetadata({
 	noIndex = false,
 }: PageMetadataInput): Metadata {
 	const canonical = toAbsoluteUrl(path);
-	const imageList = images?.length ? images.map(toAbsoluteUrl) : [toAbsoluteUrl("/profile.png")];
+	const imageList = images?.length
+		? images.map(toAbsoluteUrl)
+		: [toAbsoluteUrl("/profile.png")];
 
 	return {
 		title,

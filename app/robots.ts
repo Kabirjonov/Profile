@@ -11,7 +11,9 @@ export default function robots(): MetadataRoute.Robots {
 				disallow: ["/api/"],
 			},
 		],
-		sitemap: `${siteConfig.url}/sitemap.xml`,
-		host: new URL(siteConfig.url).host,
+		sitemap: siteConfig.isPlaceholderDomain
+			? undefined
+			: `${siteConfig.url}/sitemap.xml`,
+		host: siteConfig.isPlaceholderDomain ? undefined : new URL(siteConfig.url).host,
 	};
 }

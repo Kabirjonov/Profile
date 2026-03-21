@@ -124,12 +124,12 @@
 					"category": "Boshqa"
 				},
 				{
-					"title": "TaskFlow CRM",
-					"description": "Sotuv jamoasi uchun role-permission, analytics vidjetlar va kontakt boshqaruviga ega ichki CRM.",
-					"stack": ["React", "Node.js", "Express", "MongoDB"],
-					"status": "private",
-					"liveUrl": "https://example.com",
-					"codeUrl": "https://github.com/yourusername/taskflow-crm",
+					"title": "E-Messager",
+					"description": "Telegram uslubidagi messager frontend loyihasi: chat oynalari, autentifikatsiya oqimi va moslashuvchan suhbat interfeysi bilan.",
+					"stack": ["React", "TypeScript", "Tailwind CSS"],
+					"status": "active",
+					"liveUrl": "",
+					"codeUrl": "https://github.com/Kabirjonov/Telegram-clone-Front.git",
 					"category": "Boshqa"
 				},
 				{
@@ -201,5 +201,21 @@
 			"allStatuses": "Barcha statuslar"
 		},
 		"empty": "Filter bo'yicha loyiha topilmadi."
+	},
+	"chat": {
+		"title": "Yordamchi",
+		"status": "Online",
+		"greeting": "Assalomu alaykum. Sizga qanday yordam bera olaman?",
+		"placeholder": "Xabar yozing...",
+		"send": "Yuborish",
+		"open": "Chatni ochish",
+		"close": "Chatni yopish",
+		"error": "Xatolik yuz berdi. Iltimos, qayta urinib ko'ring.",
+		"suggestions": [
+			"Menda profil bo'yicha tajriba bor",
+			"Tajriba bo'lmasa ham mumkinmi?",
+			"Ish grafigi qanday?",
+			"Ish joyi qayerda joylashgan?"
+		]
 	}
 }

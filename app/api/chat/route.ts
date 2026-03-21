@@ -42,6 +42,8 @@ const replies: Record<
 		error: "Serverda xatolik yuz berdi.",
 		intents: {
 			greeting: "Salom. Sizga qanday yordam bera olaman?",
+			intro:
+				"Men Oxunjon Kabirjonovman. Frontend va full-stack yo'nalishda ishlayman, asosan zamonaviy web interfeyslar, dashboardlar va API integratsiyalar ustida tajribam bor.",
 			price: "Narxlar xizmat turiga bog'liq. Qaysi xizmat sizni qiziqtiryapti?",
 			contact:
 				"Men bilan bog'lanish uchun qulay usulni tanlang: Telegram, telefon, email yoki Contact bo'limi.",
@@ -52,8 +54,11 @@ const replies: Record<
 			timeline:
 				"Muddat loyiha murakkabligiga bog'liq: oddiy landing odatda 2-5 kun, murakkab web app 2-6 hafta.",
 			tech: "Asosan Next.js, React, TypeScript va API integratsiyalar bilan ishlayman.",
+			workFormat:
+				"Remote, hybrid va project-based hamkorlik formatlariga ochiqman. Qisqa muddatli tasklardan tortib to'liq product developmentgacha ishlashim mumkin.",
 			thanks: "Marhamat. Yana savol bo'lsa, yozavering.",
 			bye: "Xayr. Yaxshi kun tilayman.",
+			insult: "Fuck you too 🖕",
 		},
 	},
 	ru: {
@@ -64,6 +69,8 @@ const replies: Record<
 		error: "Произошла ошибка на сервере.",
 		intents: {
 			greeting: "Здравствуйте. Чем могу помочь?",
+			intro:
+				"Я Охунджон Кабирджонов. Занимаюсь frontend и full-stack разработкой, чаще всего работаю над современными веб-интерфейсами, dashboard-страницами и API-интеграциями.",
 			price: "Стоимость зависит от типа услуги. Что именно вас интересует?",
 			contact:
 				"Выберите удобный способ связи: Telegram, телефон, email или форма в разделе Contact.",
@@ -74,8 +81,11 @@ const replies: Record<
 			timeline:
 				"Срок зависит от сложности: простой лендинг обычно 2-5 дней, сложное веб-приложение 2-6 недель.",
 			tech: "Обычно работаю с Next.js, React, TypeScript и API-интеграциями.",
+			workFormat:
+				"Открыт к remote, hybrid и project-based формату работы. Могу подключаться как к отдельным задачам, так и к полноценной разработке продукта.",
 			thanks: "Пожалуйста. Если есть вопросы, пишите.",
 			bye: "До связи. Хорошего дня.",
+			insult: "Fuck you too 🖕",
 		},
 	},
 	en: {
@@ -86,6 +96,8 @@ const replies: Record<
 		error: "Server error occurred.",
 		intents: {
 			greeting: "Hello. How can I help you?",
+			intro:
+				"I am Oxunjon Kabirjonov, a frontend and full-stack developer focused on modern web interfaces, dashboard experiences, and API-driven products.",
 			price: "Pricing depends on the service type. Which service do you need?",
 			contact:
 				"Choose a convenient way to contact me: Telegram, phone, email, or the Contact section form.",
@@ -96,8 +108,11 @@ const replies: Record<
 			timeline:
 				"Timeline depends on complexity: simple landing pages usually take 2-5 days, complex web apps 2-6 weeks.",
 			tech: "I mainly work with Next.js, React, TypeScript, and API integrations.",
+			workFormat:
+				"I am open to remote, hybrid, and project-based collaboration. I can join both short-term tasks and full product development work.",
 			thanks: "You are welcome. Feel free to ask more.",
 			bye: "Goodbye. Have a great day.",
+			insult: "Fuck you too 🖕",
 		},
 	},
 };
@@ -111,6 +126,17 @@ const intentKeywords: Record<string, string[]> = {
 		"здравствуйте",
 		"hello",
 		"hi",
+	],
+	intro: [
+		"o'zingiz",
+		"ozingiz",
+		"haqingizda",
+		"tanishtir",
+		"расскажите о себе",
+		"о себе",
+		"introduce yourself",
+		"about yourself",
+		"briefly introduce",
 	],
 	price: ["narx", "narxi", "qancha", "цена", "стоимость", "price", "cost"],
 	contact: [
@@ -154,12 +180,31 @@ const intentKeywords: Record<string, string[]> = {
 		"stek",
 		"stack",
 		"technology",
+		"technologies",
 		"react",
 		"next",
 		"typescript",
+		"tailwind",
+	],
+	workFormat: [
+		"format",
+		"remote",
+		"hybrid",
+		"office",
+		"on-site",
+		"onsite",
+		"work format",
+		"работы",
+		"формат",
+		"удален",
+		"remote format",
+		"ishga",
+		"ishlashga",
+		"formatda",
 	],
 	thanks: ["rahmat", "спасибо", "thanks", "thank you"],
 	bye: ["xayr", "hayr", "пока", "до свидания", "bye", "goodbye"],
+	insult: ["fuck you"],
 };
 
 function normalizeMessage(input: string): string {
@@ -213,7 +258,7 @@ export async function POST(req: Request) {
 		const reply = intent ? copy.intents[intent] : copy.default;
 		const contacts = intent === "contact" ? CONTACT_METHODS : undefined;
 
-		return Response.json({ reply, contacts });
+		return Response.json({ reply, contacts, intent });
 	} catch {
 		return Response.json({ reply: replies.uz.error }, { status: 500 });
 	}

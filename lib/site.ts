@@ -1,6 +1,26 @@
-const defaultSiteUrl = "https://your-domain.example";
-const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? defaultSiteUrl;
-const normalizedSiteUrl = rawSiteUrl.replace(/\/+$/, "");
+const defaultSiteUrl = process.env.SITE_GLOBAL_URL;
+
+function normalizeSiteUrl(value: string) {
+	const withProtocol = /^https?:\/\//i.test(value) ? value : `https://${value}`;
+	return withProtocol.replace(/\/+$/, "");
+}
+
+function resolveSiteUrl() {
+	const candidates = [
+		process.env.NEXT_PUBLIC_SITE_URL,
+		process.env.SITE_URL,
+		process.env.VERCEL_PROJECT_PRODUCTION_URL,
+		process.env.VERCEL_URL,
+	].filter(Boolean) as string[];
+
+	if (candidates.length === 0) {
+		return defaultSiteUrl;
+	}
+
+	return normalizeSiteUrl(candidates[0]);
+}
+
+const normalizedSiteUrl = resolveSiteUrl();
 
 export const siteConfig = {
 	name: "Kabirjonov Oxunjon | Official Portfolio",
@@ -13,7 +33,7 @@ export const siteConfig = {
 	description:
 		"Official personal website of Kabirjonov Oxunjon. Portfolio, resume, featured projects, developer experience, and direct contact links.",
 	url: normalizedSiteUrl,
-	isPlaceholderDomain: rawSiteUrl === defaultSiteUrl,
+	isPlaceholderDomain: normalizedSiteUrl === defaultSiteUrl,
 	jobTitle: "Frontend and Full-Stack Developer",
 	email: "info.kabirjonov@gmail.com",
 	phone: "+998946684005",
@@ -22,4 +42,5 @@ export const siteConfig = {
 	linkedin: "https://www.linkedin.com/in/oxunjon-kabirjanov-022b5325b/",
 	instagram: "https://www.instagram.com/kab1rjonov_o/",
 	telegram: "https://t.me/kabirjonov_o",
+	googleSiteVerification: process.env.GOOGLE_SITE_VERIFICATION,
 };

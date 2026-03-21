@@ -11,7 +11,7 @@ type ProjectItem = {
 	title: string;
 	description: string;
 	stack: string[];
-	liveUrl: string;
+	liveUrl?: string;
 	codeUrl: string;
 	status: string;
 	category?: string;
@@ -167,15 +167,17 @@ export default function ProjectsPage() {
 									))}
 								</div>
 								<div className='mt-5 flex items-center gap-3'>
-									<Link
-										href={project.liveUrl}
-										target='_blank'
-										rel='noreferrer'
-										className='inline-flex items-center gap-1 rounded-lg bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground'
-									>
-										{t("sections.project.viewLive")}
-										<ArrowUpRight size={14} />
-									</Link>
+									{project.liveUrl ? (
+										<Link
+											href={project.liveUrl}
+											target='_blank'
+											rel='noreferrer'
+											className='inline-flex items-center gap-1 rounded-lg bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground'
+										>
+											{t("sections.project.viewLive")}
+											<ArrowUpRight size={14} />
+										</Link>
+									) : null}
 									<Link
 										href={project.codeUrl}
 										target='_blank'

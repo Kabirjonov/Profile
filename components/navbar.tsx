@@ -9,9 +9,10 @@ import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { navLinks } from "@/constants/Navbar";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export function Navbar() {
-	const [activeLink, setActiveLink] = useState("/");
+	const [activeLink, setActiveLink] = useState("");
 	const [isMobile, setIsMobile] = useState(false);
 	const { t } = useTranslation();
 	const pathname = usePathname();
@@ -90,16 +91,23 @@ export function Navbar() {
 							return (
 								<Link
 									key={link.href}
-									href={link.href}
-									onClick={() => {
+									href={active ? "#" : link.href}
+									onClick={e => {
+										if (active || link.href === activeLink) {
+											e.preventDefault(); // 🚫 stop navigation
+											return;
+										}
+
 										setIsMobile(false);
 										setActiveLink(link.href);
 									}}
-									className={`rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-muted/40 ${
+									className={cn(
+										"rounded-md px-3 py-2 text-sm font-medium transition-colors",
 										active || link.href === activeLink
-											? "text-foreground"
-											: "text-muted-foreground"
-									}`}
+											? "text-foreground pointer-events-none opacity-70 cursor-default"
+											: "text-muted-foreground hover:bg-muted/40",
+									)}
+									aria-disabled={active}
 								>
 									{t(link.key)}
 								</Link>
