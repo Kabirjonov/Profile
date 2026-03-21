@@ -4,6 +4,8 @@ import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
+
 import { ArrowRight, Download } from "lucide-react";
 function LoadingDots() {
 	return (
@@ -18,6 +20,7 @@ export function HeroSection() {
 	const { t } = useTranslation();
 	const [aboutIndex, setAboutIndex] = useState(0);
 	const [typedCount, setTypedCount] = useState(0);
+	const heroTitle = t("hero.title");
 
 	const shortAbout = useMemo(() => {
 		const items = t("hero.shortAbout", { returnObjects: true });
@@ -63,9 +66,31 @@ export function HeroSection() {
 							<LoadingDots />
 						</span>
 					</span>
-					<h1 className='max-w-[16ch] text-3xl leading-tight font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl'>
-						{t("hero.title")}
-					</h1>
+					{/* <h1 className='max-w-[16ch] text-3xl leading-tight font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl'>
+					 */}
+					<motion.h1
+						initial='hidden'
+						animate='visible'
+						className='max-w-[16ch] text-3xl leading-tight font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl'
+					>
+						{heroTitle.split("").map((char, index) => (
+							<motion.span
+								key={`${char}-${index}`}
+								variants={{
+									hidden: { opacity: 0, y: 22 },
+									visible: { opacity: 1, y: 0 },
+								}}
+								transition={{
+									duration: 0.45,
+									delay: 0.15 + index * 0.03,
+									ease: [0.22, 1, 0.36, 1],
+								}}
+								className='inline-block'
+							>
+								{char === " " ? "\u00A0" : char}
+							</motion.span>
+						))}
+					</motion.h1>
 					<p className='max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base md:text-lg'>
 						{t("hero.description")}
 					</p>

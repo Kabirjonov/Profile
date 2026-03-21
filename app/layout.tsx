@@ -11,8 +11,8 @@ import {
 	buildWebsiteSchema,
 } from "@/lib/seo";
 import { AppProviders } from "@/providers";
-import ChatWidget from "@/components/ChatWidget";
 import "./globals.css";
+import ChatWidget from "@/components/ChatWidget";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",

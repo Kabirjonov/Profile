@@ -14,6 +14,8 @@ export default function robots(): MetadataRoute.Robots {
 		sitemap: siteConfig.isPlaceholderDomain
 			? undefined
 			: `${siteConfig.url}/sitemap.xml`,
-		host: siteConfig.isPlaceholderDomain ? undefined : new URL(siteConfig.url).host,
+		host: siteConfig.isPlaceholderDomain
+			? undefined
+			: new URL(siteConfig.url).host,
 	};
 }

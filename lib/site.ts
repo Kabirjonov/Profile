@@ -1,4 +1,4 @@
-const defaultSiteUrl = process.env.SITE_GLOBAL_URL;
+const defaultSiteUrl = "https://oxunjonkabirjonov-fawn.vercel.app";
 
 function normalizeSiteUrl(value: string) {
 	const withProtocol = /^https?:\/\//i.test(value) ? value : `https://${value}`;

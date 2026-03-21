@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { MessageCircle, Send, Sparkles, X } from "lucide-react";
+import { Bot, BotIcon, MessageCircle, Send, Sparkles, X } from "lucide-react";
 import { Button } from "./ui/button";
 
 const WIDGET_COPY = {
@@ -280,34 +280,46 @@ export default function ChatWidget() {
 										}`}
 									>
 										<div
-											className={`max-w-[82%] rounded-2xl px-3 py-2 text-sm leading-relaxed shadow-sm ${
-												msg.role === "user"
-													? "rounded-br-sm bg-primary text-primary-foreground"
-													: "rounded-bl-sm border border-border/70 bg-card text-card-foreground"
+											className={`flex max-w-[88%] items-end gap-2 ${
+												msg.role === "user" ? "justify-end" : "justify-start"
 											}`}
 										>
-											{msg.text}
-											{msg.role === "bot" &&
-												Array.isArray(msg.contacts) &&
-												msg.contacts.length > 0 && (
-													<div className='mt-2 flex flex-wrap gap-2'>
-														{msg.contacts.map(contact => (
-															<a
-																key={`${contact.label}-${contact.href}`}
-																href={contact.href}
-																target={
-																	isExternalLink(contact.href)
-																		? "_blank"
-																		: "_self"
-																}
-																rel='noreferrer'
-																className='rounded-lg border border-border bg-secondary px-2 py-1 text-xs font-medium transition hover:bg-primary hover:text-primary-foreground'
-															>
-																{contact.label}
-															</a>
-														))}
-													</div>
-												)}
+											{msg.role === "bot" && (
+												<div className='flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-sm'>
+													{/* <BotIcon size={16} /> */}
+													<Sparkles size={16} />
+												</div>
+											)}
+											<div
+												className={`max-w-[82%] rounded-2xl px-3 py-2 text-sm leading-relaxed shadow-sm ${
+													msg.role === "user"
+														? "rounded-br-sm bg-primary text-primary-foreground"
+														: "rounded-bl-sm border border-border/70 bg-card text-card-foreground"
+												}`}
+											>
+												{msg.text}
+												{msg.role === "bot" &&
+													Array.isArray(msg.contacts) &&
+													msg.contacts.length > 0 && (
+														<div className='mt-2 flex flex-wrap gap-2'>
+															{msg.contacts.map(contact => (
+																<a
+																	key={`${contact.label}-${contact.href}`}
+																	href={contact.href}
+																	target={
+																		isExternalLink(contact.href)
+																			? "_blank"
+																			: "_self"
+																	}
+																	rel='noreferrer'
+																	className='rounded-lg border border-border bg-secondary px-2 py-1 text-xs font-medium transition hover:bg-primary hover:text-primary-foreground'
+																>
+																	{contact.label}
+																</a>
+															))}
+														</div>
+													)}
+											</div>
 										</div>
 									</div>
 								))}
@@ -318,7 +330,7 @@ export default function ChatWidget() {
 												key={question}
 												type='button'
 												onClick={() => sendMessage(question)}
-												className='max-w-[92%] rounded-2xl rounded-br-sm bg-primary/18 px-4 py-3 text-right text-sm font-medium text-primary transition hover:bg-primary/24'
+												className='max-w-[80%] rounded-2xl rounded-br-sm bg-primary/18 px-4 py-3 text-left text-sm font-medium text-primary transition hover:bg-primary/24'
 											>
 												{question}
 											</button>
