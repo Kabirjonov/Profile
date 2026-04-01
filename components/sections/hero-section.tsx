@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { DocumentPdf, PDFDownloadLink } from "../pdf";
 import { defaultResumeValues } from "@/types/resume";
+import { Button } from "../ui/button";
 function LoadingDots() {
 	return (
 		<span className='ml-1 inline-flex'>
@@ -109,13 +110,18 @@ export function HeroSection() {
 							fileName='Oxunjon-Kabirjonov-resume.pdf'
 							className='inline-flex w-full items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:brightness-95 sm:w-auto'
 						>
-							{({ loading }: { loading: boolean }) =>
-								loading ? "Preparing PDF..." : t("hero.primaryCta")
-							}
+							{t("hero.primaryCta")}
 						</PDFDownloadLink>
+						<button className='inline-flex sm:hidden jumping gap-2 w-full items-center justify-center rounded-xl border border-border bg-card/70 px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-muted sm:w-auto'>
+							<p className='absolute text-shadow-sm -top-1.5 -right-2 text-primary  capitalize font-bold text-xs '>
+								new
+							</p>
+							<Link href={"/resume"}>Resume create</Link>
+						</button>
+
 						<Link
 							href='#contact'
-							className='inline-flex jumping gap-2 w-full items-center justify-center rounded-xl border border-border bg-card/70 px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-muted sm:w-auto'
+							className='inline-flex  jumping gap-2 w-full items-center justify-center rounded-xl border border-border bg-card/70 px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-muted sm:w-auto'
 						>
 							{t("hero.secondaryCta")}
 							<span>

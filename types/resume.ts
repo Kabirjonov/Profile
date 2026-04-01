@@ -42,7 +42,7 @@ export type ResumeFormValues = {
 };
 
 export const defaultResumeValues: ResumeFormValues = {
-	language: "ru",
+	language: "en",
 	nameFont: "sans",
 	titleFont: "sans",
 	bodyFont: "sans",
@@ -55,12 +55,16 @@ export const defaultResumeValues: ResumeFormValues = {
 		mutedText: "#64748b",
 		border: "#dbe3f0",
 	},
-	fullName: "Full Name",
-	jobTitle: "Job Title",
+	fullName: "Oxunjon Kabirjonov",
+	jobTitle: "Full Stack Developer",
 	email: "example@gamil.com",
-	phone: "+998 90 123 45 67",
-	profiles: [{ label: "Instagram", value: "user" }],
-	photo: "",
+	phone: "+998 94 668 40 05",
+	profiles: [
+		{ label: "Telegram", value: "kabirjonov_o" },
+		{ label: "Instagram", value: "kab1rjonov_o" },
+		{ label: "Github", value: "Kabirjonov" },
+	],
+	photo: "/profile.png",
 	summary:
 		"lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 	skills:
