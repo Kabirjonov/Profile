@@ -13,7 +13,7 @@
 	"hero": {
 		"badge": "Портфолио",
 		"title": "Привет, я Охунджон Кабирджонов",
-		"description": "Я занимаюсь frontend и full-stack разработкой. На сайте собраны мой опыт, проекты и контакты.",
+		"description": "Я Full Stack разработчик с годом опыта в full-stack разработке.",
 		"availability": "Открыт к новым проектам",
 		"primaryCta": "Скачать резюме",
 		"secondaryCta": "Связаться",
@@ -140,7 +140,7 @@
 					"status": "active",
 					"liveUrl": "",
 					"codeUrl": "https://github.com/Kabirjonov/Telegram-clone-Front.git",
-					"category": "Другое"
+					"category": "Fullstack"
 				},
 				{
 					"title": "E-Commerce UI Kit",

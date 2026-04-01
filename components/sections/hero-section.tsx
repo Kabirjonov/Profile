@@ -7,6 +7,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 import { ArrowRight, Download } from "lucide-react";
+import { Button } from "../ui/button";
+import { DocumentPdf, PDFDownloadLink } from "../pdf";
 function LoadingDots() {
 	return (
 		<span className='ml-1 inline-flex'>
@@ -95,13 +97,18 @@ export function HeroSection() {
 						{t("hero.description")}
 					</p>
 					<div className='flex flex-col gap-3 sm:flex-row sm:items-center mt-7'>
-						<Link
+						{/* <Link
 							href='/resume.pdf'
 							className='inline-flex gap-1 w-full jumping items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:brightness-95 sm:w-auto'
 						>
 							{t("hero.primaryCta")}
 							<Download size={16} />
-						</Link>
+						</Link> */}
+						<Button asChild>
+							<PDFDownloadLink document={<DocumentPdf />}>
+								{t("hero.primaryCta")}
+							</PDFDownloadLink>
+						</Button>
 						<Link
 							href='#contact'
 							className='inline-flex jumping gap-2 w-full items-center justify-center rounded-xl border border-border bg-card/70 px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-muted sm:w-auto'

@@ -13,7 +13,7 @@
 	"hero": {
 		"badge": "Portfolio",
 		"title": "Salom, men Oxunjon Kabirjonov",
-		"description": "Frontend va full-stack yo'nalishida ishlovchi dasturchiman. Bu sahifada tajribam, loyihalarim va bog'lanish ma'lumotlari joylashadi.",
+		"description": "Men full-stack yo'nalishida bir yillik tajribaga ega Full Stack dasturchiman.",
 		"availability": "Yangi loyihalar uchun ochiqman",
 		"primaryCta": "Resumeni yuklab olish",
 		"secondaryCta": "Bog'lanish",
@@ -145,7 +145,7 @@
 					"status": "active",
 					"liveUrl": "",
 					"codeUrl": "https://github.com/Kabirjonov/Telegram-clone-Front.git",
-					"category": "Boshqa"
+					"category": "Fullstack"
 				},
 				{
 					"title": "E-Commerce UI Kit",

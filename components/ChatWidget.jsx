@@ -330,7 +330,7 @@ export default function ChatWidget() {
 												key={question}
 												type='button'
 												onClick={() => sendMessage(question)}
-												className='max-w-[80%] rounded-2xl rounded-br-sm bg-primary/18 px-4 py-3 text-left text-sm font-medium text-primary transition hover:bg-primary/24'
+												className='max-w-[80%] rounded-2xl rounded-br-sm bg-primary text-primary-foreground px-4 py-3 text-left text-sm font-medium  transition hover:bg-primary/24'
 											>
 												{question}
 											</button>
