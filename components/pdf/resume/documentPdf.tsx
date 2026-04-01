@@ -39,26 +39,6 @@ const styles = StyleSheet.create({
 		padding: 32,
 		fontSize: 11,
 		fontFamily: "DejaVu Sans",
-		position: "relative",
-	},
-	backgroundImage: {
-		position: "absolute",
-		top: 0,
-		left: 0,
-		right: 0,
-		bottom: 0,
-	},
-	backgroundOverlay: {
-		position: "absolute",
-		top: 0,
-		left: 0,
-		right: 0,
-		bottom: 0,
-		backgroundColor: "rgba(255,255,255,0.78)",
-	},
-	pageContent: {
-		position: "relative",
-		zIndex: 1,
 	},
 	header: {
 		flexDirection: "row",
@@ -328,29 +308,17 @@ export default function DocumentPdf({ data }: DocumentPdfProps) {
 	};
 
 	return (
-		<>
-			<Document author={data.fullName} title={`${data.fullName} Resume`}>
-				<Page size='A4' style={pageStyle}>
-					{data.backgroundImage ? (
-						<>
-							{/* eslint-disable-next-line jsx-a11y/alt-text */}
-							<Image
-								fixed
-								src={data.backgroundImage}
-								style={styles.backgroundImage}
-							/>
-							<View fixed style={styles.backgroundOverlay} />
-						</>
-					) : null}
-					<View style={styles.pageContent}>
+		<Document author={data.fullName} title={`${data.fullName} Resume`}>
+			<Page size='A4' style={pageStyle}>
 						<View style={headerStyle}>
 							<View style={styles.headerContent}>
-								<Text style={nameStyle}>{data.fullName}</Text>
-								<Text style={roleStyle}>{data.jobTitle}</Text>
-								<View style={styles.contactRow}>
-									<Text style={contactTextStyle}>{data.email}</Text>
-								</View>
-							</View>
+						<Text style={nameStyle}>{data.fullName}</Text>
+						<Text style={roleStyle}>{data.jobTitle}</Text>
+						<View style={styles.contactRow}>
+							<Text style={contactTextStyle}>{data.email}</Text>
+							<Text style={contactTextStyle}>{data.phone}</Text>
+						</View>
+					</View>
 							{data.photo ? (
 								// eslint-disable-next-line jsx-a11y/alt-text
 								<Image src={data.photo} style={styles.photo} />
@@ -432,9 +400,7 @@ export default function DocumentPdf({ data }: DocumentPdfProps) {
 								</View>
 							</View>
 						</View>
-					</View>
-				</Page>
-			</Document>
-		</>
+			</Page>
+		</Document>
 	);
 }

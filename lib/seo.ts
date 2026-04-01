@@ -26,6 +26,7 @@ type PageMetadataInput = {
 	description: string;
 	path?: string;
 	images?: string[];
+	keywords?: string[];
 	noIndex?: boolean;
 };
 
@@ -76,6 +77,7 @@ export function buildPageMetadata({
 	description,
 	path = "/",
 	images,
+	keywords = [],
 	noIndex = false,
 }: PageMetadataInput): Metadata {
 	const canonical = toAbsoluteUrl(path);
@@ -86,7 +88,7 @@ export function buildPageMetadata({
 	return {
 		title,
 		description,
-		keywords: [...brandedKeywords],
+		keywords: [...brandedKeywords, ...keywords],
 		alternates: {
 			canonical,
 		},
@@ -107,6 +109,67 @@ export function buildPageMetadata({
 		robots: noIndex
 			? { index: false, follow: false }
 			: { index: true, follow: true },
+	};
+}
+
+export function buildResumeBuilderSchema() {
+	return {
+		"@context": "https://schema.org",
+		"@type": "SoftwareApplication",
+		name: "Resume Builder",
+		applicationCategory: "BusinessApplication",
+		operatingSystem: "Web",
+		url: toAbsoluteUrl("/resume"),
+		description:
+			"Online resume and CV builder that lets users create, customize, preview, and download professional resumes in PDF format.",
+		creator: {
+			"@id": `${siteConfig.url}/#person`,
+		},
+		offers: {
+			"@type": "Offer",
+			price: "0",
+			priceCurrency: "USD",
+		},
+		featureList: [
+			"Create resume online",
+			"Generate PDF resume",
+			"Customize fonts and colors",
+			"Upload profile photo and background",
+			"Switch between Uzbek, Russian, and English",
+		],
+	};
+}
+
+export function buildResumeBuilderFaqSchema() {
+	return {
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		mainEntity: [
+			{
+				"@type": "Question",
+				name: "Can I create and download a resume in PDF format?",
+				acceptedAnswer: {
+					"@type": "Answer",
+					text: "Yes. The resume builder lets you edit your resume online, preview the design, and download the final result as a PDF file.",
+				},
+			},
+			{
+				"@type": "Question",
+				name: "Does the resume builder support multiple languages?",
+				acceptedAnswer: {
+					"@type": "Answer",
+					text: "Yes. You can prepare your resume with Uzbek, Russian, or English section headings in the PDF output.",
+				},
+			},
+			{
+				"@type": "Question",
+				name: "Can I customize the resume design?",
+				acceptedAnswer: {
+					"@type": "Answer",
+					text: "Yes. You can choose themes, set custom colors, change fonts, upload a profile image, and personalize the PDF background.",
+				},
+			},
+		],
 	};
 }
 

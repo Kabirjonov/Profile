@@ -23,8 +23,8 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 To forward contact form messages to Telegram bot, add these variables to your environment:
 
 ```bash
-TELEGRAM_BOT_TOKEN=your_bot_token
-TELEGRAM_CHAT_ID=your_chat_id
+NEXT_PUBLIC_TELEGRAM_BOT_TOKEN=your_bot_token
+NEXT_PUBLIC_TELEGRAM_CHAT_ID=your_chat_id
 ```
 
 Then restart the dev server.

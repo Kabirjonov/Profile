@@ -28,11 +28,11 @@ export type ResumeFormValues = {
 	titleFont: ResumeFontId;
 	bodyFont: ResumeFontId;
 	theme: ResumeThemeId;
-	backgroundImage: string;
 	customColors: ResumeThemeColors;
 	fullName: string;
 	jobTitle: string;
 	email: string;
+	phone: string;
 	profiles: ResumeProfileItem[];
 	photo: string;
 	summary: string;
@@ -47,7 +47,6 @@ export const defaultResumeValues: ResumeFormValues = {
 	titleFont: "sans",
 	bodyFont: "sans",
 	theme: "classic",
-	backgroundImage: "",
 	customColors: {
 		pageBackground: "#ffffff",
 		sidebarBackground: "#f8fafc",
@@ -59,6 +58,7 @@ export const defaultResumeValues: ResumeFormValues = {
 	fullName: "Full Name",
 	jobTitle: "Job Title",
 	email: "example@gamil.com",
+	phone: "+998 90 123 45 67",
 	profiles: [{ label: "Instagram", value: "user" }],
 	photo: "",
 	summary:

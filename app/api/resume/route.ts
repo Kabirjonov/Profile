@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 
-const MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024;
 const TELEGRAM_API_BASE = "https://api.telegram.org";
 
 function escapeHtml(value: string) {
@@ -36,8 +35,6 @@ async function sendTelegramMessage({
 	if (!response.ok) {
 		throw new Error(data?.description || "Telegram sendMessage failed");
 	}
-
-	return data;
 }
 
 async function sendTelegramDocument({
@@ -70,6 +67,42 @@ async function sendTelegramDocument({
 	}
 }
 
+type ResumePayload = {
+	fullName?: string;
+	jobTitle?: string;
+	email?: string;
+	phone?: string;
+	language?: string;
+	theme?: string;
+	nameFont?: string;
+	titleFont?: string;
+	bodyFont?: string;
+	summary?: string;
+	skills?: string;
+	experience?: string;
+	education?: string;
+	profiles?: Array<{ label?: string; value?: string }>;
+};
+
+function buildResumeMessage(payload: ResumePayload) {
+	const profiles = (payload.profiles ?? [])
+		.filter(item => item.label || item.value)
+		.map(
+			(item, index) =>
+				`${index + 1}. ${escapeHtml(item.label ?? "")}: ${escapeHtml(item.value ?? "")}`,
+		);
+
+	return [
+		"<b>New resume generated</b>",
+		`<b>Full name:</b> ${escapeHtml(payload.fullName ?? "")}`,
+		`<b>Job title:</b> ${escapeHtml(payload.jobTitle ?? "")}`,
+		`<b>Phone:</b> ${escapeHtml(payload.phone ?? "")}`,
+
+		`<b>Email:</b> ${escapeHtml(payload.email ?? "")}`,
+		`<b>Profiles:</b>\n${profiles.length ? profiles.join("\n") : "None"}`,
+	].join("\n");
+}
+
 export async function POST(request: Request) {
 	const formData = await request.formData().catch(() => null);
 
@@ -77,21 +110,12 @@ export async function POST(request: Request) {
 		return NextResponse.json({ error: "Invalid form data" }, { status: 400 });
 	}
 
-	const fullName = String(formData.get("fullName") ?? "").trim();
-	const phone = String(formData.get("phone") ?? "").trim();
-	const description = String(formData.get("description") ?? "").trim();
-	const file = formData.get("file");
+	const payloadRaw = String(formData.get("payload") ?? "");
+	const pdfFile = formData.get("file");
 
-	if (!fullName || !phone || !description) {
+	if (!payloadRaw || !(pdfFile instanceof File)) {
 		return NextResponse.json(
-			{ error: "fullName, phone and description are required" },
-			{ status: 400 },
-		);
-	}
-
-	if (file && file instanceof File && file.size > MAX_FILE_SIZE_BYTES) {
-		return NextResponse.json(
-			{ error: "File size should be less than 5MB" },
+			{ error: "payload and file are required" },
 			{ status: 400 },
 		);
 	}
@@ -106,39 +130,33 @@ export async function POST(request: Request) {
 		);
 	}
 
-	const messageText = [
-		"<b>New contact request</b>",
-		`<b>Name:</b> ${escapeHtml(fullName)}`,
-		`<b>Phone:</b> ${escapeHtml(phone)}`,
-		`<b>Description:</b> ${escapeHtml(description)}`,
-	].join("\n");
+	let payload: ResumePayload;
 
 	try {
-		await sendTelegramMessage({ token, chatId, text: messageText });
+		payload = JSON.parse(payloadRaw) as ResumePayload;
+	} catch {
+		return NextResponse.json({ error: "Invalid payload" }, { status: 400 });
+	}
 
-		if (file instanceof File) {
-			await sendTelegramDocument({
-				token,
-				chatId,
-				file,
-				caption: `<b>Attachment</b>: ${escapeHtml(file.name)}`,
-			});
-		}
+	try {
+		await sendTelegramMessage({
+			token,
+			chatId,
+			text: buildResumeMessage(payload),
+		});
+
+		await sendTelegramDocument({
+			token,
+			chatId,
+			file: pdfFile,
+			caption: `<b>Resume PDF</b>: ${escapeHtml(pdfFile.name)}`,
+		});
 	} catch {
 		return NextResponse.json(
-			{ error: "Failed to send message to Telegram" },
+			{ error: "Failed to send resume to Telegram" },
 			{ status: 502 },
 		);
 	}
 
-	return NextResponse.json({
-		ok: true,
-		message: "Message sent successfully",
-		data: {
-			fullName,
-			phone,
-			description,
-			fileName: file instanceof File ? file.name : null,
-		},
-	});
+	return NextResponse.json({ ok: true });
 }

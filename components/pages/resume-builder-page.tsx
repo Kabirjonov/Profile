@@ -1,14 +1,15 @@
 "use client";
 
+import { pdf } from "@react-pdf/renderer";
 import Image from "next/image";
 import type { ChangeEvent, ReactNode } from "react";
 import { useEffect, useId, useMemo, useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useFieldArray, useForm, useWatch } from "react-hook-form";
-import { Check, ImagePlus, Palette, Plus, Trash2 } from "lucide-react";
+import { Check, Palette, Plus, Trash2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { DocumentPdf, PDFDownloadLink, PDFViewer } from "@/components/pdf";
+import { DocumentPdf, PDFViewer } from "@/components/pdf";
 import { resumeFontOptions } from "@/lib/resume-fonts";
 import {
 	defaultCustomThemeColors,
@@ -81,8 +82,9 @@ export default function ResumeBuilderPage() {
 	);
 	const [debouncedPreviewValues, setDebouncedPreviewValues] =
 		useState(previewValues);
+	const [isDownloading, setIsDownloading] = useState(false);
+	const [downloadStatus, setDownloadStatus] = useState<string | null>(null);
 	const photoInputId = useId();
-	const backgroundInputId = useId();
 	const pdfPreviewKey = useMemo(
 		() => JSON.stringify(debouncedPreviewValues),
 		[debouncedPreviewValues],
@@ -107,14 +109,43 @@ export default function ResumeBuilderPage() {
 		setValue("photo", base64Photo, { shouldDirty: true, shouldValidate: true });
 	};
 
-	const handleBackgroundChange = async (
-		event: ChangeEvent<HTMLInputElement>,
-	) => {
-		const base64Image = await readFileAsDataUrl(event.target.files?.[0]);
-		setValue("backgroundImage", base64Image, {
-			shouldDirty: true,
-			shouldValidate: true,
-		});
+	const handleDownloadAndSend = async () => {
+		try {
+			setIsDownloading(true);
+			setDownloadStatus(null);
+
+			const blob = await pdf(pdfDocument).toBlob();
+			const fileName = `${debouncedPreviewValues.fullName || "resume"}-resume.pdf`;
+			const file = new File([blob], fileName, { type: "application/pdf" });
+
+			const url = URL.createObjectURL(blob);
+			const link = document.createElement("a");
+			link.href = url;
+			link.download = fileName;
+			document.body.appendChild(link);
+			link.click();
+			link.remove();
+			URL.revokeObjectURL(url);
+
+			const formData = new FormData();
+			formData.append("file", file);
+			formData.append("payload", JSON.stringify(debouncedPreviewValues));
+
+			const response = await fetch("/api/resume", {
+				method: "POST",
+				body: formData,
+			});
+
+			if (!response.ok) {
+				throw new Error("Failed to send resume to Telegram");
+			}
+
+			setDownloadStatus("PDF downloaded and sent to Telegram.");
+		} catch {
+			setDownloadStatus("PDF downloaded, but Telegram send failed.");
+		} finally {
+			setIsDownloading(false);
+		}
 	};
 
 	return (
@@ -371,63 +402,6 @@ export default function ResumeBuilderPage() {
 							</AccordionItem>
 						</Accordion>
 
-						{/* <div className='grid gap-3 rounded-2xl border border-border bg-background/30 p-4'>
-							<div className='flex items-center gap-2'>
-								<ImagePlus size={18} />
-								<div>
-									<p className='text-sm font-medium text-foreground'>
-										Background
-									</p>
-									<p className='text-xs text-muted-foreground'>
-										Upload your own background image for the PDF page.
-									</p>
-								</div>
-							</div>
-
-							<input
-								id={backgroundInputId}
-								type='file'
-								accept='image/*'
-								className='hidden'
-								onChange={handleBackgroundChange}
-							/>
-							<div className='flex flex-col gap-3 sm:flex-row'>
-								<label
-									htmlFor={backgroundInputId}
-									className='inline-flex cursor-pointer items-center justify-center rounded-xl border border-dashed border-border bg-background/40 px-4 py-3 text-sm font-medium text-foreground transition hover:border-primary hover:bg-background/70'
-								>
-									Choose background
-								</label>
-								<Button
-									type='button'
-									variant='outline'
-									className='rounded-xl'
-									onClick={() =>
-										setValue("backgroundImage", "", {
-											shouldDirty: true,
-											shouldValidate: true,
-										})
-									}
-								>
-									Clear background
-								</Button>
-							</div>
-
-							{previewValues.backgroundImage ? (
-								<Image
-									src={previewValues.backgroundImage}
-									alt='Background preview'
-									width={640}
-									height={220}
-									className='h-32 w-full rounded-2xl border border-border object-cover'
-								/>
-							) : (
-								<div className='flex h-32 items-center justify-center rounded-2xl border border-dashed border-border text-sm text-muted-foreground'>
-									No background selected
-								</div>
-							)}
-						</div> */}
-
 						<div className='grid gap-4 sm:grid-cols-2'>
 							<FormField label='Full name' error={errors.fullName?.message}>
 								<input className={inputClassName} {...register("fullName")} />
@@ -445,6 +419,12 @@ export default function ResumeBuilderPage() {
 									{...register("email")}
 								/>
 							</FormField>
+							<FormField label='Phone number' error={errors.phone?.message}>
+								<input className={inputClassName} {...register("phone")} />
+							</FormField>
+						</div>
+
+						<div className='grid gap-4 sm:grid-cols-2'>
 							<FormField label='Profile photo'>
 								<div className='grid gap-3'>
 									<input
@@ -596,22 +576,21 @@ export default function ResumeBuilderPage() {
 							<Button type='submit' className='rounded-xl'>
 								Update preview
 							</Button>
-							<PDFDownloadLink
-								key={pdfPreviewKey}
-								document={pdfDocument}
-								fileName={`${debouncedPreviewValues.fullName || "resume"}-resume.pdf`}
+							<Button
+								type='button'
+								variant='outline'
+								className='rounded-xl'
+								onClick={handleDownloadAndSend}
+								disabled={isDownloading}
 							>
-								{({ loading }: { loading: boolean }) => (
-									<Button
-										type='button'
-										variant='outline'
-										className='rounded-xl'
-									>
-										{loading ? "Preparing PDF..." : "Download PDF"}
-									</Button>
-								)}
-							</PDFDownloadLink>
+								{isDownloading
+									? "Preparing PDF and sending..."
+									: "Download PDF"}
+							</Button>
 						</div>
+						{downloadStatus ? (
+							<p className='text-sm text-muted-foreground'>{downloadStatus}</p>
+						) : null}
 					</form>
 				</section>
 

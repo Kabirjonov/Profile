@@ -23,7 +23,7 @@ export function ContactSection() {
 					<h2 className='text-3xl font-bold tracking-tight text-foreground sm:text-4xl'>
 						{t("sections.contact.title")}
 					</h2>
-					<div className='flex mx-auto gap-2 justify-center-safe my-2'>
+					<div className='hidden mx-auto gap-2 justify-center-safe my-2'>
 						{" "}
 						{SocialLinks.map(item => (
 							<Link
