@@ -10,6 +10,7 @@ import { navLinks } from "@/constants/Navbar";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Button } from "./ui/button";
 
 export function Navbar() {
 	const [activeLink, setActiveLink] = useState("");
@@ -46,8 +47,15 @@ export function Navbar() {
 					))}
 				</div>
 				<div className='flex items-center gap-2'>
+					<Button className='relative hidden sm:block' variant={"outline"}>
+						<p className='absolute text-shadow-sm -top-1.5 -right-2 text-primary  capitalize font-bold text-xs '>
+							new
+						</p>
+						<Link href={"/resume"}>Resume create</Link>
+					</Button>
 					<LanguageSwitcher />
 					<ThemeToggle />
+
 					<button
 						type='button'
 						className='md:hidden inline-flex items-center justify-center rounded-md border border-border/70 px-3 py-2 text-sm'

@@ -1,4 +1,4 @@
- "use client";
+"use client";
 
 import {
 	ChevronRight,
@@ -67,7 +67,7 @@ export default function RightLinks() {
 				))}
 			</div>
 
-			<div className='fixed left-3 top-1/2 z-40 -translate-y-1/2 md:hidden'>
+			<div className='hidden left-3 top-1/2 z-40 -translate-y-1/2 '>
 				<div
 					className={`flex items-center gap-2 rounded-2xl border border-border/80 bg-background/95 p-2 shadow-xl backdrop-blur transition-all duration-300 ${
 						isOpen ? "translate-x-0" : "-translate-x-1"

@@ -6,9 +6,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import { ArrowRight, Download } from "lucide-react";
-import { Button } from "../ui/button";
+import { ArrowRight } from "lucide-react";
 import { DocumentPdf, PDFDownloadLink } from "../pdf";
+import { defaultResumeValues } from "@/types/resume";
 function LoadingDots() {
 	return (
 		<span className='ml-1 inline-flex'>
@@ -104,11 +104,15 @@ export function HeroSection() {
 							{t("hero.primaryCta")}
 							<Download size={16} />
 						</Link> */}
-						<Button asChild>
-							<PDFDownloadLink document={<DocumentPdf />}>
-								{t("hero.primaryCta")}
-							</PDFDownloadLink>
-						</Button>
+						<PDFDownloadLink
+							document={<DocumentPdf data={defaultResumeValues} />}
+							fileName='Oxunjon-Kabirjonov-resume.pdf'
+							className='inline-flex w-full items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:brightness-95 sm:w-auto'
+						>
+							{({ loading }: { loading: boolean }) =>
+								loading ? "Preparing PDF..." : t("hero.primaryCta")
+							}
+						</PDFDownloadLink>
 						<Link
 							href='#contact'
 							className='inline-flex jumping gap-2 w-full items-center justify-center rounded-xl border border-border bg-card/70 px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-muted sm:w-auto'
