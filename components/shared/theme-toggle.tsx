@@ -37,16 +37,16 @@ export function ThemeToggle() {
 		<button
 			type='button'
 			onClick={onToggleTheme}
-			className='group inline-flex h-8 w-14 items-center rounded-full border border-border bg-card px-1 transition hover:border-primary/60'
+			className='group inline-flex h-7 w-12 items-center rounded-full border border-border bg-card px-1 transition hover:border-primary/60 sm:h-8 sm:w-14'
 			aria-label='Toggle theme'
 		>
 			<span className='sr-only'>Toggle theme</span>
-			<span className='inline-flex h-6 w-6 translate-x-0 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform dark:translate-x-6'>
-				<span className='text-[10px] leading-none dark:hidden'>
-					<Sun className='p-1' />
+			<span className='inline-flex h-5 w-5 translate-x-0 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform dark:translate-x-5 sm:h-6 sm:w-6 sm:dark:translate-x-6'>
+				<span className='dark:hidden'>
+					<Sun className='h-3.5 w-3.5 sm:h-4 sm:w-4' />
 				</span>
-				<span className='hidden text-[10px] leading-none dark:inline'>
-					<Moon className='p-1' />
+				<span className='hidden dark:inline'>
+					<Moon className='h-3.5 w-3.5 sm:h-4 sm:w-4' />
 				</span>
 			</span>
 		</button>

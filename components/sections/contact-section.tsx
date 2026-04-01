@@ -42,7 +42,7 @@ export function ContactSection() {
             whitespace-nowrap rounded-md
             bg-foreground text-background
             px-3 py-1 text-xs font-medium
-            opacity-0 translate-x-2
+            opacity-0 
             transition-all duration-200
             group-hover:opacity-100 group-hover:translate-x-0
           '

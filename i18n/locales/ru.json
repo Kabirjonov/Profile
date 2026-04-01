@@ -68,7 +68,7 @@
 				},
 				{
 					"title": "Other",
-					"items": ["Решение задач"]
+					"items": ["GraphQL", "REST API", "WebSocket"]
 				},
 				{
 					"title": "Languages",
@@ -82,6 +82,21 @@
 			"viewLive": "Live",
 			"viewCode": "Код",
 			"items": [
+				{
+					"title": "Texnool Market",
+					"description": "Full-stack платформа портфолио с авторизацией, dashboard и мультиязычными публичными страницами.",
+					"stack": [
+						"Next.js",
+						"TypeScript",
+						"PostgreSQL",
+						"Tailwind",
+						"Next.js"
+					],
+					"status": "production",
+					"liveUrl": "https://www.texnool.uz/",
+					"codeUrl": "https://github.com/Kabirjonov/demo-phone-market",
+					"category": "Fullstack"
+				},
 				{
 					"title": "RoofUz",
 					"description": "Full-stack платформа портфолио с авторизацией, dashboard и мультиязычными публичными страницами.",

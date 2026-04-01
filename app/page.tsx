@@ -41,7 +41,7 @@ export default async function HomePage() {
 				{/* <ChatWidget /> */}
 				<div className='relative z-10'>
 					<HeroSection />
-					<BrandSeoSection />
+					{/* <BrandSeoSection /> */}
 					<AboutSection />
 					<ProjectSection />
 					{/* <SkillsSection /> */}

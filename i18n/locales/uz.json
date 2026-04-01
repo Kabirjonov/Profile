@@ -49,13 +49,13 @@
 						"TypeScript",
 						"React",
 						"Next",
-						"WebSocket",
+
 						"Zustand"
 					]
 				},
 				{
 					"title": "Backend",
-					"items": ["Node.js", "Express.js", "Nest.js"]
+					"items": ["Node.js", "Express.js", "Nest.js", "TypeOrm"]
 				},
 				{
 					"title": "Database",
@@ -67,7 +67,7 @@
 				},
 				{
 					"title": "Other",
-					"items": ["Muammo yechish"]
+					"items": ["GraphQL", "REST API", "WebSocket"]
 				},
 				{
 					"title": "Languages",
@@ -81,6 +81,21 @@
 			"viewLive": "Live",
 			"viewCode": "Kod",
 			"items": [
+				{
+					"title": "Texnool Market",
+					"description": "Avtorizatsiya, dashboard va ko'p tilli ommaviy sahifalarga ega full-stack portfolio platforma.",
+					"stack": [
+						"Next.js",
+						"TypeScript",
+						"PostgreSQL",
+						"Tailwind",
+						"Next.js"
+					],
+					"status": "production",
+					"liveUrl": "https://www.texnool.uz/",
+					"codeUrl": "https://github.com/Kabirjonov/demo-phone-market",
+					"category": "Fullstack"
+				},
 				{
 					"title": "RoofUz",
 					"description": "Avtorizatsiya, dashboard va ko'p tilli ommaviy sahifalarga ega full-stack portfolio platforma.",
