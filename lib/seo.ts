@@ -51,6 +51,11 @@ export function buildRootMetadata(): Metadata {
 		creator: siteConfig.fullName,
 		publisher: siteConfig.fullName,
 		keywords: [...brandedKeywords],
+		icons: {
+			icon: [{ url: "/profile.png", type: "image/png", sizes: "500x500" }],
+			shortcut: ["/profile.png"],
+			apple: [{ url: "/profile.png", type: "image/png", sizes: "500x500" }],
+		},
 		alternates: canonicalUrl ? { canonical: canonicalUrl } : undefined,
 		openGraph: {
 			type: "website",
