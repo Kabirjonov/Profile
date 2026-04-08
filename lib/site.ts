@@ -1,4 +1,4 @@
-const defaultSiteUrl = "https://oxunjonkabirjonov-fawn.vercel.app";
+const defaultSiteUrl = "https://kabirjonov.uz";
 
 function normalizeSiteUrl(value: string) {
 	const withProtocol = /^https?:\/\//i.test(value) ? value : `https://${value}`;
