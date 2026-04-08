@@ -10,6 +10,8 @@ import { ArrowRight } from "lucide-react";
 import { DocumentPdf, PDFDownloadLink } from "../pdf";
 import { defaultResumeValues } from "@/types/resume";
 import { Button } from "../ui/button";
+import { SiNextdotjs, SiTypescript } from "react-icons/si";
+import { FaReact } from "react-icons/fa";
 function LoadingDots() {
 	return (
 		<span className='ml-1 inline-flex'>
@@ -108,7 +110,7 @@ export function HeroSection() {
 						<PDFDownloadLink
 							document={<DocumentPdf data={defaultResumeValues} />}
 							fileName='Oxunjon-Kabirjonov-resume.pdf'
-							className='inline-flex w-full items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:brightness-95 sm:w-auto'
+							className='inline-flex w-full jumping items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:brightness-95 sm:w-auto'
 						>
 							{t("hero.primaryCta")}
 						</PDFDownloadLink>
@@ -131,9 +133,48 @@ export function HeroSection() {
 					</div>
 				</div>
 
-				<div className='relative group mx-auto w-full max-w-[320px] sm:max-w-[380px] md:max-w-[420px] lg:col-span-5 lg:mr-0 '>
+				<div className='relative group mx-auto w-full  max-w-[320px] sm:max-w-[380px] md:max-w-[420px] lg:col-span-5 lg:mr-0 '>
 					<div className='absolute -inset-3 -z-10 rounded-[2rem] sm:-inset-4' />
 					<div className='rounded-[2rem] border border-border/80 p-2.5 shadow-sm sm:p-3'>
+						<div className='absolute left-0 top-0'>
+							<div className='w-24 h-24 bg-primary rounded-full blur-3xl opacity-70 animate-pulse' />
+						</div>
+						<div className='absolute right-0 top-0'>
+							<div className='w-16 h-16 bg-secondary rounded-full blur-3xl opacity-70 animate-pulse' />
+						</div>
+						{/* <div className='absolute inset-0 pointer-events-none'>
+							<div className='relative h-full w-full animate-[spin_12s_linear_infinite]'>
+								{[
+									{
+										Icon: FaReact,
+										className: "text-sky-400",
+										style: "top-0 left-1/2 -translate-x-1/2 -translate-y-1/2",
+									},
+									{
+										Icon: SiTypescript,
+										className: "text-blue-500",
+										style: "top-1/2 right-0 translate-x-1/2 -translate-y-1/2",
+									},
+									{
+										Icon: FaReact,
+										className: "text-cyan-400",
+										style: "bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2",
+									},
+									{
+										Icon: SiNextdotjs,
+										className: "text-indigo-500",
+										style: "top-1/2 left-0 -translate-x-1/2 -translate-y-1/2",
+									},
+								].map(({ Icon, className, style }, index) => (
+									<div
+										key={index}
+										className={`absolute ${style} rounded-full border border-border/60 bg-background/80 p-3 shadow-md backdrop-blur-sm`}
+									>
+										<Icon className={`h-6 w-6 ${className}`} />
+									</div>
+								))}
+							</div>
+						</div> */}
 						<div className='overflow-hidden rounded-[1.5rem] border border-border/70 bg-card/30 sm:rounded-[1.4rem]'>
 							<Image
 								className='h-auto w-full object-cover'

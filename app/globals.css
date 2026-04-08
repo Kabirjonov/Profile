@@ -188,3 +188,27 @@
 		}
 	}
 }
+
+@keyframes squareOrbit {
+	from {
+		transform: rotate(0deg) translateY(calc(var(--orbit-radius) * -1))
+			rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg) translateY(calc(var(--orbit-radius) * -1))
+			rotate(-360deg);
+	}
+}
+
+.orbit-ring {
+	position: absolute;
+	inset: 0;
+	--orbit-radius: clamp(120px, 35%, 170px);
+}
+
+.orbit-item {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	animation: squareOrbit 8s linear infinite;
+}
