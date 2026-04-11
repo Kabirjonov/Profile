@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 import { ArrowRight } from "lucide-react";
 import { DocumentPdf, PDFDownloadLink } from "../pdf";
-import { defaultResumeValues } from "@/types/resume";
+import { realResumeValues } from "@/types/resume";
 import { Button } from "../ui/button";
 import { SiNextdotjs, SiTypescript } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
@@ -107,7 +107,7 @@ export function HeroSection() {
 							<Download size={16} />
 						</Link> */}
 						<PDFDownloadLink
-							document={<DocumentPdf data={defaultResumeValues} />}
+							document={<DocumentPdf data={realResumeValues} />}
 							fileName='Oxunjon-Kabirjonov-resume.pdf'
 							className='inline-flex w-full jumping items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:brightness-95 sm:w-auto'
 						>

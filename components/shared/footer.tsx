@@ -47,20 +47,18 @@ export function Footer() {
 						{t("footer.social")}
 					</h3>
 					<div className='mt-3 flex flex-wrap gap-2 '>
-						{SocialLinks.filter(item => item.name !== "Download CV").map(
-							item => (
-								<Link
-									key={item.name}
-									href={item.link}
-									target={item.link.startsWith("http") ? "_blank" : undefined}
-									rel={item.link.startsWith("http") ? "noreferrer" : undefined}
-									aria-label={item.name}
-									className='inline-flex size-9 items-center justify-center rounded-full border border-border/80 bg-background/60 text-foreground transition hover:border-primary/70 hover:text-primary'
-								>
-									<item.icon size={16} />
-								</Link>
-							),
-						)}
+						{SocialLinks.map(item => (
+							<Link
+								key={item.name}
+								href={item.link}
+								target={item.link.startsWith("http") ? "_blank" : undefined}
+								rel={item.link.startsWith("http") ? "noreferrer" : undefined}
+								aria-label={item.name}
+								className='inline-flex size-9 items-center justify-center rounded-full border border-border/80 bg-background/60 text-foreground transition hover:border-primary/70 hover:text-primary'
+							>
+								<item.icon size={16} />
+							</Link>
+						))}
 					</div>
 				</div>
 			</div>

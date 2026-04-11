@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { DocumentPdf, PDFDownloadLink } from "@/components/pdf";
+import { realResumeValues } from "@/types/resume";
 
 export const SocialLinks = [
 	{ name: "Github", link: "https://github.com/Kabirjonov", icon: Github },
@@ -37,11 +39,6 @@ export const SocialLinks = [
 		link: "tel:+998946684005",
 		icon: Phone,
 	},
-	{
-		name: "Download CV",
-		link: "/resume.pdf",
-		icon: Download,
-	},
 ] as const;
 export default function RightLinks() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -65,6 +62,19 @@ export default function RightLinks() {
 						</span>
 					</Link>
 				))}
+				<PDFDownloadLink
+					document={<DocumentPdf data={realResumeValues} />}
+					fileName='Oxunjon-Kabirjonov-resume.pdf'
+					className='group relative rounded-full border border-border p-2 transition hover:bg-primary'
+				>
+					<Download
+						size={20}
+						className='transition-colors group-hover:text-card'
+					/>
+					<span className='absolute left-full ml-3 -translate-x-2 whitespace-nowrap rounded-md bg-foreground px-3 py-1 text-xs font-medium text-background opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100'>
+						Download CV
+					</span>
+				</PDFDownloadLink>
 			</div>
 
 			<div className='hidden left-3 top-1/2 z-40 -translate-y-1/2 '>
@@ -103,6 +113,16 @@ export default function RightLinks() {
 								<item.icon size={19} />
 							</Link>
 						))}
+						<PDFDownloadLink
+							document={<DocumentPdf data={realResumeValues} />}
+							fileName='Oxunjon-Kabirjonov-resume.pdf'
+							onClick={() => setIsOpen(false)}
+							className='inline-flex size-11 shrink-0 items-center justify-center rounded-xl border border-border bg-[#08224b] text-slate-100 transition hover:border-primary hover:bg-primary hover:text-primary-foreground'
+							aria-label='Download CV'
+							title='Download CV'
+						>
+							<Download size={19} />
+						</PDFDownloadLink>
 					</div>
 				</div>
 			</div>
