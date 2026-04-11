@@ -55,7 +55,6 @@ export function HeroSection() {
 
 		return () => clearTimeout(pauseTimer);
 	}, [typedCount, currentAbout, shortAbout.length]);
-
 	return (
 		<section
 			id='home'

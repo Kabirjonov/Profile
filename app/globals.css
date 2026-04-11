@@ -186,6 +186,8 @@
 		.jumping:hover {
 			transform: translateY(-6px);
 		}
+		.hoverShowMoreSize:hover {
+		}
 	}
 }
 

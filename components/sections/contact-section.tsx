@@ -18,13 +18,73 @@ export function ContactSection() {
 			id='contact'
 			className='mx-auto w-full max-w-6xl px-6 py-16 sm:px-10'
 		>
-			<div className='rounded-2xl border border-border/80 bg-card/85 p-6 shadow-sm backdrop-blur-sm sm:p-8'>
-				<div className='mx-auto max-w-3xl text-center '>
+			<div className='mx-auto max-w-3xl text-center my-2 '>
+				<h2 className='text-3xl font-bold tracking-tight text-foreground sm:text-4xl'>
+					{t("sections.contact.title")}
+				</h2>
+				<div className='hidden mx-auto gap-2 justify-center-safe my-2'>
+					{" "}
+					{SocialLinks.map(item => (
+						<Link
+							href={item.link}
+							key={item.name}
+							target={item.link.startsWith("http") ? "_blank" : "_self"}
+							className=' p-2 group rounded-full border border-border  transition hover:bg-primary relative'
+						>
+							<item.icon
+								size={20}
+								className='group-hover:text-card transition-colors transition'
+							/>
+							<span
+								className='
+            absolute left-full ml-3
+            whitespace-nowrap rounded-md
+            bg-foreground text-background
+            px-3 py-1 text-xs font-medium
+            opacity-0 
+            transition-all duration-200
+            group-hover:opacity-100 group-hover:translate-x-0
+          '
+							>
+								{item.name}
+							</span>
+						</Link>
+					))}
+				</div>
+				<div className='mx-auto mt-4 h-1 w-16 rounded-full bg-primary/80' />
+				<p className='mx-auto mt-5 max-w-2xl break-words text-sm leading-relaxed text-muted-foreground sm:text-base'>
+					{t("sections.contact.description")}
+				</p>
+			</div>
+			<div className='grid gap-8 lg:grid-cols-2 lg:items-start'>
+				{/* left section */}
+
+				<div className='space-y-6'>
 					<h2 className='text-3xl font-bold tracking-tight text-foreground sm:text-4xl'>
-						{t("sections.contact.title")}
+						Let's talk
 					</h2>
-					<div className='hidden mx-auto gap-2 justify-center-safe my-2'>
-						{" "}
+					<p className='max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base'>
+						I'm always open to discussing new projects, creative ideas, or
+						opportunities to be part of your vision.
+					</p>
+
+					<div className='space-y-4'>
+						<div className='rounded-2xl border border-border/80 bg-card/85 p-4 shadow-sm'>
+							<p className='text-sm text-muted-foreground'>Email</p>
+							<p className='font-semibold'>info.kabirjonov@gmail.com</p>
+						</div>
+
+						<div className='rounded-2xl border border-border/80 bg-card/85 p-4 shadow-sm'>
+							<p className='text-sm text-muted-foreground'>Phone</p>
+							<p className='font-semibold'>+9989 (94) 668-40-05</p>
+						</div>
+
+						<div className='rounded-2xl border border-border/80 bg-card/85 p-4 shadow-sm'>
+							<p className='text-sm text-muted-foreground'>Location</p>
+							<p className='font-semibold'>Uzbekistan Tashkent</p>
+						</div>
+					</div>
+					<div className='flex gap-2'>
 						{SocialLinks.map(item => (
 							<Link
 								href={item.link}
@@ -34,130 +94,117 @@ export function ContactSection() {
 							>
 								<item.icon
 									size={20}
-									className='group-hover:text-card transition-colors transition'
+									// className='group-hover:text-card transition-colors transition'
 								/>
-								<span
-									className='
-            absolute left-full ml-3
-            whitespace-nowrap rounded-md
-            bg-foreground text-background
-            px-3 py-1 text-xs font-medium
-            opacity-0 
-            transition-all duration-200
-            group-hover:opacity-100 group-hover:translate-x-0
-          '
-								>
-									{item.name}
-								</span>
 							</Link>
 						))}
 					</div>
-					<div className='mx-auto mt-4 h-1 w-16 rounded-full bg-primary/80' />
-					<p className='mx-auto mt-5 max-w-2xl break-words text-sm leading-relaxed text-muted-foreground sm:text-base'>
-						{t("sections.contact.description")}
-					</p>
 				</div>
+				{/* right section */}
+				<div className='rounded-2xl border border-border/80 bg-card/85 p-6 shadow-sm backdrop-blur-sm sm:p-8'>
+					<form onSubmit={onSubmit} className='mt-8 grid gap-5'>
+						<div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
+							<div className='grid gap-2 min-w-0'>
+								<label htmlFor='fullName' className='text-sm font-medium'>
+									{t("sections.contact.form.fullName")}
+								</label>
+								<input
+									id='fullName'
+									type='text'
+									placeholder={t("sections.contact.form.fullNamePlaceholder")}
+									className='w-full rounded-lg border border-border bg-background/60 px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20'
+									{...register("fullName")}
+								/>
+								{errors.fullName && (
+									<p className='text-xs text-destructive'>
+										{errors.fullName.message}
+									</p>
+								)}
+							</div>
 
-				<form onSubmit={onSubmit} className='mt-8 grid gap-5'>
-					<div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
-						<div className='grid gap-2 min-w-0'>
-							<label htmlFor='fullName' className='text-sm font-medium'>
-								{t("sections.contact.form.fullName")}
+							<div className='grid gap-2 min-w-0'>
+								<label htmlFor='phone' className='text-sm font-medium'>
+									{t("sections.contact.form.phone")}
+								</label>
+								<Controller
+									control={control}
+									name='phone'
+									render={({ field }) => (
+										<input
+											id='phone'
+											type='tel'
+											inputMode='numeric'
+											autoComplete='tel'
+											placeholder={t("sections.contact.form.phonePlaceholder")}
+											className='w-full rounded-lg border border-border bg-background/60 px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20'
+											value={field.value ?? "+998"}
+											onBlur={field.onBlur}
+											onChange={event =>
+												field.onChange(formatUzPhone(event.target.value))
+											}
+										/>
+									)}
+								/>
+								{errors.phone && (
+									<p className='text-xs text-destructive'>
+										{errors.phone.message}
+									</p>
+								)}
+							</div>
+						</div>
+
+						<div className='grid gap-2'>
+							<label htmlFor='description' className='text-sm font-medium'>
+								{t("sections.contact.form.description")}
+							</label>
+							<textarea
+								id='description'
+								rows={5}
+								placeholder={t("sections.contact.form.descriptionPlaceholder")}
+								className='w-full rounded-lg border border-border bg-background/60 px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20'
+								{...register("description")}
+							/>
+							{errors.description && (
+								<p className='text-xs text-destructive'>
+									{errors.description.message}
+								</p>
+							)}
+						</div>
+
+						<div className='grid gap-2'>
+							<label htmlFor='file' className='text-sm font-medium'>
+								{t("sections.contact.form.file")}
 							</label>
 							<input
-								id='fullName'
-								type='text'
-								placeholder={t("sections.contact.form.fullNamePlaceholder")}
-								className='w-full rounded-lg border border-border bg-background/60 px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20'
-								{...register("fullName")}
+								id='file'
+								type='file'
+								className='w-full  rounded-lg border border-border bg-background/60 px-4 py-3 text-sm file:mr-4 file:rounded-md file:border-0 file:bg-primary/15 file:px-3 file:py-1.5 file:text-sm file:font-medium file:text-primary'
+								{...register("file")}
 							/>
-							{errors.fullName && (
-								<p className='text-xs text-destructive'>
-									{errors.fullName.message}
-								</p>
-							)}
-						</div>
-
-						<div className='grid gap-2 min-w-0'>
-							<label htmlFor='phone' className='text-sm font-medium'>
-								{t("sections.contact.form.phone")}
-							</label>
-							<Controller
-								control={control}
-								name='phone'
-								render={({ field }) => (
-									<input
-										id='phone'
-										type='tel'
-										inputMode='numeric'
-										autoComplete='tel'
-										placeholder={t("sections.contact.form.phonePlaceholder")}
-										className='w-full rounded-lg border border-border bg-background/60 px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20'
-										value={field.value ?? "+998"}
-										onBlur={field.onBlur}
-										onChange={event =>
-											field.onChange(formatUzPhone(event.target.value))
-										}
-									/>
-								)}
-							/>
-							{errors.phone && (
-								<p className='text-xs text-destructive'>
-									{errors.phone.message}
-								</p>
-							)}
-						</div>
-					</div>
-
-					<div className='grid gap-2'>
-						<label htmlFor='description' className='text-sm font-medium'>
-							{t("sections.contact.form.description")}
-						</label>
-						<textarea
-							id='description'
-							rows={5}
-							placeholder={t("sections.contact.form.descriptionPlaceholder")}
-							className='w-full rounded-lg border border-border bg-background/60 px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20'
-							{...register("description")}
-						/>
-						{errors.description && (
-							<p className='text-xs text-destructive'>
-								{errors.description.message}
+							<p className='text-xs text-muted-foreground'>
+								{t("sections.contact.form.fileHint")}
 							</p>
-						)}
-					</div>
+							{errors.file && (
+								<p className='text-xs text-destructive'>
+									{errors.file.message}
+								</p>
+							)}
+						</div>
 
-					<div className='grid gap-2'>
-						<label htmlFor='file' className='text-sm font-medium'>
-							{t("sections.contact.form.file")}
-						</label>
-						<input
-							id='file'
-							type='file'
-							className='w-full  rounded-lg border border-border bg-background/60 px-4 py-3 text-sm file:mr-4 file:rounded-md file:border-0 file:bg-primary/15 file:px-3 file:py-1.5 file:text-sm file:font-medium file:text-primary'
-							{...register("file")}
-						/>
-						<p className='text-xs text-muted-foreground'>
-							{t("sections.contact.form.fileHint")}
-						</p>
-						{errors.file && (
-							<p className='text-xs text-destructive'>{errors.file.message}</p>
+						<button
+							type='submit'
+							disabled={isPending}
+							className='inline-flex jumping w-full items-center justify-center rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto'
+						>
+							{isPending
+								? t("sections.contact.form.submitting")
+								: t("sections.contact.form.submit")}
+						</button>
+						{serverError && (
+							<p className='text-sm text-destructive'>{serverError}</p>
 						)}
-					</div>
-
-					<button
-						type='submit'
-						disabled={isPending}
-						className='inline-flex jumping w-full items-center justify-center rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto'
-					>
-						{isPending
-							? t("sections.contact.form.submitting")
-							: t("sections.contact.form.submit")}
-					</button>
-					{serverError && (
-						<p className='text-sm text-destructive'>{serverError}</p>
-					)}
-				</form>
+					</form>
+				</div>
 			</div>
 		</section>
 	);

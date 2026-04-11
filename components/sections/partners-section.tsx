@@ -33,7 +33,7 @@ export function Partners() {
 	const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
 	return (
 		<div className='mx-auto w-full max-w-6xl px-4 py-12 sm:px-8 sm:py-14 lg:px-10 lg:py-20'>
-			<h2 className='mb-8 text-2xl font-bold text-center'>Partners</h2>
+			{/* <h2 className='mb-8 text-2xl font-bold text-center'>Partners</h2> */}
 			<Carousel
 				plugins={[plugin.current]}
 				opts={{

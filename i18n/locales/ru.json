@@ -13,15 +13,15 @@
 	"hero": {
 		"badge": "Портфолио",
 		"title": "Привет, я Охунджон Кабирджонов",
-		"description": "Я Full Stack разработчик с годом опыта в full-stack разработке.",
+		"description": "Я Full Stack разработчик с 1 годом опыта в full-stack разработке.",
 		"availability": "Открыт к новым проектам",
 		"primaryCta": "Скачать резюме",
 		"secondaryCta": "Связаться",
 		"stackLabel": "Технологии",
 		"shortAbout": [
 			"Счастливый парень",
-			"Frontend разработчик",
-			"Backend разработчик",
+			"Full Stack программист",
+			"Freelancer",
 			"Брат",
 			"Сын"
 		]
@@ -56,20 +56,22 @@
 
 				{
 					"title": "Backend",
-					"items": ["Node.js", "Express.js", "Nest.js"]
-				},
-				{
-					"title": "Database",
-					"items": ["MongoDB", "PostgrSQL"]
+					"items": [
+						"Node.js",
+						"Express.js",
+						"Nest.js",
+						"MongoDB",
+						"PostgrSQL",
+						"GraphQL",
+						"REST API",
+						"WebSocket"
+					]
 				},
 				{
 					"title": "Tools",
 					"items": ["Git", "Docker"]
 				},
-				{
-					"title": "Other",
-					"items": ["GraphQL", "REST API", "WebSocket"]
-				},
+
 				{
 					"title": "Languages",
 					"items": ["Английский B2", "Русский C2", "Узбекский C2"]
@@ -95,7 +97,8 @@
 					"status": "production",
 					"liveUrl": "https://www.texnool.uz/",
 					"codeUrl": "https://github.com/Kabirjonov/demo-phone-market",
-					"category": "Fullstack"
+					"category": "Fullstack",
+					"image": "/projects/texnool.png"
 				},
 				{
 					"title": "RoofUz",
@@ -113,7 +116,8 @@
 					"status": "private",
 					"liveUrl": "https://e-blog-backend.onrender.com",
 					"codeUrl": "https://github.com/Kabirjonov/E-Blog-Backend",
-					"category": "Backend"
+					"category": "Backend",
+					"image": "/projects/nodejs.png"
 				},
 				{
 					"title": "E-Blog Frontend",

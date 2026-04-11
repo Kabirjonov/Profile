@@ -97,6 +97,14 @@ export function buildPageMetadata({
 		alternates: {
 			canonical,
 		},
+		icons: {
+			icon: [
+				{ url: "/favicon.ico" },
+				{ url: "/icon.png", type: "image/png", sizes: "512x512" },
+			],
+			apple: [{ url: "/icon.png", sizes: "180x180", type: "image/png" }],
+			shortcut: ["/icon.png"],
+		},
 		openGraph: {
 			type: "website",
 			url: canonical,
