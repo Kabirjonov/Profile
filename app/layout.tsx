@@ -12,6 +12,7 @@ import {
 } from "@/lib/seo";
 import { AppProviders } from "@/providers";
 import ChatWidgetClient from "@/components/shared/ChatWidgetClient";
+// @ts-ignore
 import "./globals.css";
 const geistSans = Geist({
 	variable: "--font-geist-sans",

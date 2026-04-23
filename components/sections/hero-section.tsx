@@ -52,7 +52,7 @@ export function HeroSection() {
 	}, [typedCount, currentAbout, shortAbout.length]);
 	return (
 		<section
-			id='home'
+			id='hero'
 			className='mx-auto relative w-full max-w-6xl px-4 pb-12 pt-12 sm:px-8 sm:pb-14 sm:pt-16 lg:px-10 lg:pt-20'
 		>
 			<div className='grid items-center gap-8 md:gap-10 lg:grid-cols-12 lg:gap-12'>

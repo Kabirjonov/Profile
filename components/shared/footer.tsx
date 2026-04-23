@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 
 import { navLinks } from "@/constants/Navbar";
 import { SocialLinks } from "@/components/shared/RightLinks";
+import { cn } from "@/lib/utils";
 
 export function Footer() {
 	const { t } = useTranslation();
@@ -26,18 +27,25 @@ export function Footer() {
 				</div>
 
 				<div>
-					<h3 className='text-sm font-semibold tracking-wider text-foreground/90 uppercase'>
+					<h3 className='text-sm font-semibold  tracking-wider text-foreground/90 uppercase'>
 						{t("footer.quickLinks")}
 					</h3>
-					<div className='mt-3 flex flex-wrap gap-x-4 gap-y-2'>
+					<div className='mt-3 flex flex-col text-start gap-x-4 gap-y-2'>
 						{navLinks.map(link => (
-							<Link
-								key={link.href}
-								href={link.href}
-								className='text-sm text-muted-foreground transition hover:text-foreground'
+							<button
+								key={link.id}
+								onClick={() => {
+									document.getElementById(link.id)?.scrollIntoView({
+										behavior: "smooth",
+										block: "start",
+									});
+								}}
+								className={cn(
+									"text-sm font-medium text-start transition-colors",
+								)}
 							>
 								{t(link.key)}
-							</Link>
+							</button>
 						))}
 					</div>
 				</div>

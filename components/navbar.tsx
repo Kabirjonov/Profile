@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
@@ -18,6 +18,31 @@ export function Navbar() {
 	const { t } = useTranslation();
 	const pathname = usePathname();
 	const isHomePage = pathname === "/";
+	const [activeSection, setActiveSection] = useState("home");
+
+	useEffect(() => {
+		const sections = navLinks.map(l => document.getElementById(l.id));
+
+		const observer = new IntersectionObserver(
+			entries => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						setActiveSection(entry.target.id);
+					}
+				});
+			},
+			{
+				root: null,
+				threshold: 0.5, // section 50% ko‘rinsa active bo‘ladi
+			},
+		);
+
+		sections.forEach(sec => {
+			if (sec) observer.observe(sec);
+		});
+
+		return () => observer.disconnect();
+	}, []);
 
 	return (
 		<header className='sticky top-0 z-50 border-b border-border/70 bg-background/80 backdrop-blur relative'>
@@ -30,21 +55,29 @@ export function Navbar() {
 				</Link>
 
 				<div className='hidden md:flex items-center gap-3 overflow-x-auto px-2 md:gap-4 lg:gap-6 '>
-					{navLinks.map(link => (
-						<Link
-							key={link.href}
-							href={link.href}
-							onClick={() => setActiveLink(link.href)}
-							className={`text-sm font-medium transition-colors hover:text-foreground ${
-								(link.href === "/" && isHomePage && activeLink === "/") ||
-								(link.href !== "/" && link.href === activeLink)
-									? " text-foreground"
-									: "text-muted-foreground"
-							}`}
-						>
-							{t(link.key)}
-						</Link>
-					))}
+					{navLinks.map(link => {
+						const isActive = activeSection === link.id;
+
+						return (
+							<button
+								key={link.id}
+								onClick={() => {
+									document.getElementById(link.id)?.scrollIntoView({
+										behavior: "smooth",
+										block: "start",
+									});
+								}}
+								className={cn(
+									"text-sm font-medium transition-colors",
+									isActive
+										? "text-primary"
+										: "text-muted-foreground hover:text-foreground",
+								)}
+							>
+								{t(link.key)}
+							</button>
+						);
+					})}
 				</div>
 				<div className='flex items-center gap-2'>
 					<Button className='relative hidden sm:block' variant={"outline"}>
@@ -88,37 +121,34 @@ export function Navbar() {
 			{isMobile && (
 				<div
 					className={`md:hidden absolute left-0 right-0 top-full w-full border-t border-border/70 bg-background/95 backdrop-blur
-      transition-all duration-300 ease-out
-      ${isMobile ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}
-    `}
+		transition-all duration-300 ease-out
+		${isMobile ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}
+	`}
 				>
-					{/* // <div className='md:hidden border-t border-border/70 bg-background/95 backdrop-blur'> */}
 					<div className='mx-auto w-full max-w-6xl px-6 sm:px-10 py-3 flex flex-col gap-2'>
 						{navLinks.map(link => {
-							const active = link.href === pathname;
+							const isActive = activeSection === link.id;
+
 							return (
-								<Link
-									key={link.href}
-									href={active ? "#" : link.href}
-									onClick={e => {
-										if (active || link.href === activeLink) {
-											e.preventDefault(); // 🚫 stop navigation
-											return;
-										}
+								<button
+									key={link.id}
+									onClick={() => {
+										document.getElementById(link.id)?.scrollIntoView({
+											behavior: "smooth",
+											block: "start",
+										});
 
 										setIsMobile(false);
-										setActiveLink(link.href);
 									}}
 									className={cn(
-										"rounded-md px-3 py-2 text-sm font-medium transition-colors",
-										active || link.href === activeLink
-											? "text-foreground pointer-events-none opacity-70 cursor-default"
+										"rounded-md px-3 py-2 text-sm font-medium text-left transition-colors",
+										isActive
+											? "text-secondary bg-muted/40"
 											: "text-muted-foreground hover:bg-muted/40",
 									)}
-									aria-disabled={active}
 								>
 									{t(link.key)}
-								</Link>
+								</button>
 							);
 						})}
 					</div>
