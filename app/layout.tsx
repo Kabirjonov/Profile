@@ -11,9 +11,8 @@ import {
 	buildWebsiteSchema,
 } from "@/lib/seo";
 import { AppProviders } from "@/providers";
+import ChatWidgetClient from "@/components/shared/ChatWidgetClient";
 import "./globals.css";
-import ChatWidget from "@/components/ChatWidget";
-
 const geistSans = Geist({
 	variable: "--font-geist-sans",
 	subsets: ["latin"],
@@ -78,7 +77,7 @@ export default async function RootLayout({
 				</noscript>
 				<AppProviders locale={locale} messages={dictionary}>
 					{children}
-					<ChatWidget />
+					<ChatWidgetClient />
 				</AppProviders>
 			</body>
 		</html>

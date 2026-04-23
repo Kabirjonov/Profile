@@ -42,5 +42,5 @@ export const siteConfig = {
 	linkedin: "https://www.linkedin.com/in/oxunjon-kabirjanov-022b5325b/",
 	instagram: "https://www.instagram.com/kab1rjonov_o/",
 	telegram: "https://t.me/kabirjonov_o",
-	googleSiteVerification: process.env.GOOGLE_SITE_VERIFICATION,
+	googleSiteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
 };

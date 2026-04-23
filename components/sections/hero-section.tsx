@@ -6,12 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-import { ArrowRight } from "lucide-react";
-import { DocumentPdf, PDFDownloadLink } from "../pdf";
-import { realResumeValues } from "@/types/resume";
-import { Button } from "../ui/button";
-import { SiNextdotjs, SiTypescript } from "react-icons/si";
-import { FaReact } from "react-icons/fa";
+import { ArrowRight, Download } from "lucide-react";
 function LoadingDots() {
 	return (
 		<span className='ml-1 inline-flex'>
@@ -106,13 +101,14 @@ export function HeroSection() {
 							{t("hero.primaryCta")}
 							<Download size={16} />
 						</Link> */}
-						<PDFDownloadLink
-							document={<DocumentPdf data={realResumeValues} />}
-							fileName='Oxunjon-Kabirjonov-resume.pdf'
-							className='inline-flex w-full jumping items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:brightness-95 sm:w-auto'
+						<Link
+							href='/resume.pdf'
+							download
+							className='inline-flex gap-2 w-full jumping items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition hover:brightness-95 sm:w-auto'
 						>
 							{t("hero.primaryCta")}
-						</PDFDownloadLink>
+							<Download size={16} />
+						</Link>
 						<button className='inline-flex sm:hidden jumping gap-2 w-full items-center justify-center rounded-xl border border-border bg-card/70 px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-muted sm:w-auto'>
 							<p className='absolute text-shadow-sm -top-1.5 -right-2 text-primary  capitalize font-bold text-xs '>
 								new
